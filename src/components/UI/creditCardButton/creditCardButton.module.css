@@ -1,0 +1,23 @@
+.creditCard {
+  background-color: var(--base-button);
+  border: none;
+  border-radius: 6px;
+  color: var(--base-text);
+}
+.creditCard span {
+  text-transform: uppercase;
+  font-size: 12px;
+  line-heigth: 160%;
+  padding: 16px;
+  display: flex;
+  align-itens: center;
+  gap: 12px;
+}
+.creditCard:hover {
+  background-color: var(--base-hover);
+}
+.creditCard:active {
+  box-sizing: border-box;
+  border: 1px solid var(--purple);
+  background-color: var(--purple-light);
+}
