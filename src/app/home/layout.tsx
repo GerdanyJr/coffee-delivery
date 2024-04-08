@@ -1,18 +1,18 @@
+import Header from "@/components/home/header";
 import type { Metadata } from "next";
-import "./globals.css";
-
 export const metadata: Metadata = {
   title: "Coffee Delivery",
 };
 
-export default function RootLayout({
+export default function HomeLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
-      <body>{children}</body>
-    </html>
+    <>
+      <Header />
+      {children}
+    </>
   );
 }
