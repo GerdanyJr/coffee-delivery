@@ -1,0 +1,62 @@
+.productCardContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--base-card);
+  border-radius: 6px 36px;
+
+  align-items: center;
+}
+.productCardContainer img {
+  height: 120px;
+  width: 120px;
+  margin-top: -20px;
+  margin-bottom: 16px;
+}
+.productCardContainer .coffeeTag {
+  background-color: var(--yellow-light);
+  text-transform: uppercase;
+  color: var(--yellow-dark);
+  font-size: 10px;
+  font-weigth: 700;
+  border-radius: 100px;
+  padding: 4px 8px;
+  margin-bottom: 16px;
+}
+.productCardContainer h2 {
+  margin-bottom: 8px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 130%;
+}
+.productCardContainer p {
+  margin-bottom: 33px;
+  font-size: 14px;
+  line-height: 130%;
+  text-align: center;
+  color: var(--base-label);
+  margin-inline: 20px;
+  width: 216px;
+}
+.productCardContainer .priceContainer {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 208px;
+}
+.productCardContainer .priceContainer span {
+  color: var(--base-text);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+}
+.productCardContainer .priceContainer strong {
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 130%;
+}
+.productCardContainer .shopContainer {
+  display: flex;
+  align-itens: center;
+  gap: 8px;
+}
