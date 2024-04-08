@@ -1,0 +1,13 @@
+.container {
+  background-color: var(--purple-light);
+  display: flex;
+  gap: 4px;
+  padding: 0.3em;
+  align-items: center;
+  border-radius: 6px;
+}
+.container span {
+  color: var(--purple-dark);
+  font-family: var(--roboto);
+  font-size: 0.8em;
+}
