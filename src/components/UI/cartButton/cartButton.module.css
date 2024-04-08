@@ -1,0 +1,29 @@
+.button {
+  margin: 5em;
+  padding: 0.5em;
+  background-color: var(--yellow-light);
+  color: var(--yellow-dark);
+  border: none;
+  border-radius: 6px;
+  position: relative;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: var(--yellow-dark);
+  color: var(--yellow-light);
+}
+.badge {
+  position: absolute;
+  right: -30%;
+  top: -30%;
+  width: 60%;
+  height: 60%;
+  background-color: var(--yellow-dark);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 12px;
+}
