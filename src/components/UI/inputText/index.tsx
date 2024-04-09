@@ -2,19 +2,21 @@ import React from "react";
 import styles from "./inputText.module.css";
 
 interface InputTextProps extends React.HTMLAttributes<HTMLInputElement> {
-  required: boolean;
-  value?: string;
+  value: string;
+  placeholder: string;
+  required?: boolean;
 }
 
 export function InputText({
   required,
   value,
+  placeholder,
   ...props
 }: InputTextProps) {
   return (
     <div className={styles.input_container}>
       <input
-        placeholder="Label"
+        placeholder={placeholder}
         value={value}
         {...props}
         className={styles.input}
