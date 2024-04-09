@@ -1,11 +1,25 @@
-import { CreditCard } from "@phosphor-icons/react";
 import styles from "./creditCardButton.module.css";
-export function CreditCardButton() {
+import React from "react";
+export function CreditCardButton({
+  icon,
+  title,
+  checked,
+  onClick,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  checked: boolean;
+  onClick: () => void;
+}) {
   return (
-    <button className={styles.creditCard}>
-       <span>
-      <CreditCard size={16} color="#8047F8" />
-     cartão de crédito</span>
+    <button
+      className={`${styles.creditCard} ${checked ? styles.checked : ""}`}
+      onClick={onClick}
+    >
+      <span>
+        {icon}
+        {title}
+      </span>
     </button>
   );
 }

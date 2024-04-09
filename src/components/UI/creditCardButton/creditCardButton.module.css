@@ -1,6 +1,6 @@
 .creditCard {
   background-color: var(--base-button);
-  border: none;
+  border: 1px solid transparent;
   border-radius: 6px;
   color: var(--base-text);
 }
@@ -16,7 +16,7 @@
 .creditCard:hover {
   background-color: var(--base-hover);
 }
-.creditCard:active {
+.checked {
   box-sizing: border-box;
   border: 1px solid var(--purple);
   background-color: var(--purple-light);
