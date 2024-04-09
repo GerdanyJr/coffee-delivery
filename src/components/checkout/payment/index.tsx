@@ -1,7 +1,11 @@
+"use client";
+
 import { CurrencyDollar } from "@phosphor-icons/react/dist/ssr";
 import styles from "./payment.module.css";
 import Options from "./options";
+import { useState } from "react";
 export function Payment() {
+  const [selected, setSelected] = useState("");
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -13,7 +17,7 @@ export function Payment() {
           </p>
         </span>
       </div>
-      <Options />
+      <Options select={selected} onClick={(id) => setSelected(id)} />
     </div>
   );
 }
