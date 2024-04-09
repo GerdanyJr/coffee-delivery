@@ -1,0 +1,60 @@
+.addressContainer {
+  background-color: var(--base-card);
+  border-radius: 6px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 640px;
+}
+.orderCheck h2 {
+  font-family: var(--balloo-2);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 130%;
+  color: var(--base-subtitle);
+  margin-bottom: 15px;
+}
+.addressContainer .header {
+  display: flex;
+  align-items: top;
+}
+.addressContainer .header svg {
+  margin-right: 8px;
+}
+.addressContainer .title {
+  display: flex;
+  flex-direction: column;
+}
+.addressContainer .title h3 {
+  font-size: 16px;
+  line-height: 130%;
+  margin-bottom: 2px;
+  font-weight: 400;
+  color: var(--base-subtitle);
+}
+.addressContainer .title span {
+  font-size: 14px;
+  line-height: 130%;
+  color: var(--base-text);
+}
+
+.addressContainer form div:nth-child(2) input {
+  width: 100%;
+  margin-top: 16px;
+}
+.addressContainer form div:nth-child(3) input,
+.addressContainer form div:nth-child(5) input {
+  margin-right: 12px;
+  margin-top: 16px;
+}
+.addressContainer form div:nth-child(4) input {
+  width: 348px;
+}
+.addressContainer form div:nth-child(6) input {
+  width: 276px;
+  margin-right: 12px;
+}
+.addressContainer form div:last-child input {
+  width: 60px;
+}
