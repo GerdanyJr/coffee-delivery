@@ -1,6 +1,6 @@
 "use client";
 import { COOFFES } from "@/constants/coffees";
-import ProductCard from "../UI/productCard";
+import ProductCard from "../../UI/productCard";
 import styles from "./productList.module.css";
 
 export function ProductList({ title }: { title: string }) {
