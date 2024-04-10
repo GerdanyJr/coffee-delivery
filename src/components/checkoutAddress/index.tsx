@@ -16,13 +16,15 @@ export function CheckoutAddress() {
         <form action="">
           <InputText placeholder="CEP" required />
           <InputText placeholder="Rua" required />
-
-          <InputText placeholder="Número" required />
-          <InputText placeholder="Complemento" />
-
-          <InputText placeholder="Bairro" required />
-          <InputText placeholder="Cidade" required />
-          <InputText placeholder="UF" required />
+          <div>
+            <InputText placeholder="Número" required />
+            <InputText placeholder="Complemento" />
+          </div>
+          <div>
+            <InputText placeholder="Bairro" required />
+            <InputText placeholder="Cidade" required />
+            <InputText placeholder="UF" required />
+          </div>
         </form>
       </div>
     </div>
