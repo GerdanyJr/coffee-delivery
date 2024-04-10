@@ -12,7 +12,7 @@ export default function Header() {
         <CoffeDeliveryLogo />
       </Link>
       <div className={styles.actions}>
-        <Location />
+        <Location place="Porto Alegre, RS" />
         <CartButton quantity={0} />
       </div>
     </header>
