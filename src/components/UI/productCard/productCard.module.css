@@ -3,7 +3,7 @@
   flex-direction: column;
   background-color: var(--base-card);
   border-radius: 6px 36px;
-
+  width: min-content;
   align-items: center;
 }
 .productCardContainer img {
@@ -12,15 +12,23 @@
   margin-top: -20px;
   margin-bottom: 16px;
 }
+
+.tag_container {
+  max-width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 16px;
+  gap: 0.25em;
+}
 .productCardContainer .coffeeTag {
   background-color: var(--yellow-light);
   text-transform: uppercase;
   color: var(--yellow-dark);
   font-size: 10px;
-  font-weigth: 700;
+  font-weight: 700;
   border-radius: 100px;
   padding: 4px 8px;
-  margin-bottom: 16px;
 }
 .productCardContainer h2 {
   margin-bottom: 8px;
