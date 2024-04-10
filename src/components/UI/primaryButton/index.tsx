@@ -8,7 +8,7 @@ interface PrimaryButtonProps
 
 export function PrimaryButton({ label, ...props }: PrimaryButtonProps) {
   return (
-    <button {...props} className={styles.button}>
+    <button {...props} className={`${styles.button} ${props.className ?? ""}`}>
       {label}
     </button>
   );
