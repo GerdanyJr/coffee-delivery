@@ -1,14 +1,20 @@
 "use client";
-import { COOFFES } from "@/constants/coffees";
+import { Coffee } from "@/@types/interface/coffee";
 import ProductCard from "../../UI/productCard";
 import styles from "./productList.module.css";
 
-export function ProductList({ title }: { title: string }) {
+export function ProductList({
+  title,
+  items,
+}: {
+  title: string;
+  items: Coffee[];
+}) {
   return (
     <>
       <h2 className={styles.title}>{title}</h2>
       <div className={styles.list}>
-        {COOFFES.map((cooffe) => (
+        {items.map((cooffe) => (
           <ProductCard
             key={cooffe.name}
             image={cooffe.image}
