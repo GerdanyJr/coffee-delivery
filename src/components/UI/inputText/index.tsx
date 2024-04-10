@@ -2,9 +2,10 @@ import React from "react";
 import styles from "./inputText.module.css";
 
 interface InputTextProps extends React.HTMLAttributes<HTMLInputElement> {
-  required?: boolean;
-  value?: string;
+
+  value: string;
   placeholder: string;
+  required?: boolean;
 }
 
 export function InputText({
