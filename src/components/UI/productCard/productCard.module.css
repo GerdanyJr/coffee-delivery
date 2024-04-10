@@ -17,7 +17,7 @@
   text-transform: uppercase;
   color: var(--yellow-dark);
   font-size: 10px;
-  font-weigth: 700;
+  font-weight: 700;
   border-radius: 100px;
   padding: 4px 8px;
   margin-bottom: 16px;
@@ -59,6 +59,6 @@
 }
 .productCardContainer .shopContainer {
   display: flex;
-  align-itens: center;
+  align-items:  center;
   gap: 8px;
 }

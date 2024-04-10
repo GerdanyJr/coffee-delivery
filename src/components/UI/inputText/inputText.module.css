@@ -8,7 +8,6 @@
   background-color: var(--base-input);
   padding: 1em;
   border-radius: 0.5em;
-  width: 50%;
   border: 2px solid transparent;
 }
 .span {
