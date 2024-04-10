@@ -1,0 +1,33 @@
+.footerContainer {
+  display: flex;
+  align-items: top;
+  gap: 18%;
+  height: 250px;
+  width: 100dvw;
+  position: fixed;
+  bottom: 0;
+  background-color: var(--purple-light);
+}
+.navLinks,
+.partnershipp,
+.contactUs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: var(--roboto);
+}
+.navLinks h3,
+.partnershipp h3,
+.contactUs h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(var(--base-title));
+  margin-bottom: 5px;
+}
+.navLinks a,
+.partnershipp a,
+.contactUs a {
+  text-decoration: none;
+  color: var(--base-text);
+  font-size: 14px;
+}
