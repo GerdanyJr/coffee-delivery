@@ -1,6 +1,7 @@
 .title {
   font-family: var(--balloo-2);
   margin: 3em 0;
+  font-size: 2em;
 }
 .list {
   display: flex;
