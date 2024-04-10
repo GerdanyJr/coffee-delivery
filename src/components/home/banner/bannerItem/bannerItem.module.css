@@ -1,0 +1,8 @@
+.banner_item {
+  display: flex;
+  align-items: center;
+  color: var(--base-text);
+  font-family: var(--roboto);
+  font-weight: 300;
+  gap: 0.5em;
+}
