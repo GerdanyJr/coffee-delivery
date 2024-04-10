@@ -1,0 +1,9 @@
+.title {
+  font-family: var(--balloo-2);
+  margin: 3em 0;
+}
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.2em 2em;
+}
