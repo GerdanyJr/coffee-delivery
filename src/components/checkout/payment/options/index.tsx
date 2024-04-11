@@ -6,12 +6,12 @@ const items = [
   {
     id: "creditCard",
     title: "Cartão de Crédito",
-    icon: <Bank size={16} color="var(--purple)" />,
+    icon: <CreditCard size={16} color="var(--purple)" />,
   },
   {
     id: "debitCard",
     title: "Cartão de Débito",
-    icon: <CreditCard size={16} color="var(--purple)" />,
+    icon: <Bank size={16} color="var(--purple)" />,
   },
   {
     id: "money",
