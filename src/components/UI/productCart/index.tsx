@@ -7,15 +7,13 @@ export function ProductCart({ name, price }: { name: string; price: string }) {
     <div className={styles.cartContainer}>
       <img src={productImage.src} alt="" />
       <div className={styles.column}>
-        <div className={styles.details}>
-          <h2>{name}</h2>
-          <span>R$ {price}</span>
-        </div>
+        <h2 className={styles.coffee_name}>{name}</h2>
         <div className={styles.addToCart}>
           <InputNumber />
           <SecondaryButton label="Remover" />
         </div>
       </div>
+      <span className={styles.price}>{price} R$</span>
     </div>
   );
 }

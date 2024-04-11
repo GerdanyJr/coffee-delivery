@@ -8,12 +8,12 @@ import CartButton from "@/components/UI/cartButton";
 export default function Header() {
   return (
     <header className={styles.header}>
-      <Link href="home">
+      <Link href="/home">
         <CoffeDeliveryLogo />
       </Link>
       <div className={styles.actions}>
         <Location place="Porto Alegre, RS" />
-        <CartButton quantity={0} />
+        <CartButton quantity={2} href="/home/checkout" />
       </div>
     </header>
   );
