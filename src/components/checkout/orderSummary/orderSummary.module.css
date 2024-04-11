@@ -1,0 +1,41 @@
+.summary_header {
+  font-family: var(--balloo-2);
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+.summary_container {
+  padding: 2.25em;
+  background-color: var(--base-card);
+  width: fit-content;
+  border-radius: 0.5em 2.75em;
+}
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+.items > div {
+  border-bottom: 1px solid var(--base-button);
+  padding-bottom: 1.5em;
+}
+.price {
+  font-family: var(--balloo-2);
+  color: var(--base-text);
+  margin: 1.5em 0;
+}
+.price > div {
+  font-size: 0.9em;
+  display: flex;
+  justify-content: space-between;
+}
+.price span {
+  font-size: 1em;
+}
+.price > div:last-child {
+  font-weight: bold;
+  color: var(--base-subtitle);
+  font-size: 1.25em;
+}
+.confirm_button {
+  width: 100%;
+}

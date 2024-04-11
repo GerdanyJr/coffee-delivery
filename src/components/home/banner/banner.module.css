@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5em;
+  gap: 3em;
+}
+.brand h2 {
+  font-size: 3em;
+  font-family: var(--balloo-2);
+}
+.brand p {
+  font-size: 1.4em;
+  font-family: var(--roboto);
+  color: var(--base-subtitle);
+  margin: 1em 0 3em 0;
+}
+.items_container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.container img {
+  width: 40%;
+}

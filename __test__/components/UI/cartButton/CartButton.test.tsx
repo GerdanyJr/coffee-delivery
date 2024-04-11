@@ -1,5 +1,5 @@
 import CartButton from "@/components/UI/cartButton";
-import { render, screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
 
 describe("CartButton", () => {
   it("WHEN quantity < 99 should display quantity", () => {
@@ -10,6 +10,12 @@ describe("CartButton", () => {
     const cartButton = getByText(quantity);
 
     expect(cartButton).toBeInTheDocument();
+  });
+  it("WHEN quantity = 0 should not display the badge", () => {
+    const { queryByText } = render(<CartButton quantity={0} />);
+    const spanBadge = queryByText("0", { selector: "span.badge" });
+
+    expect(spanBadge).not.toBeInTheDocument();
   });
   it("WHEN quantity > 99 should display 99+", () => {
     const { getByText } = render(<CartButton quantity={100} />);
