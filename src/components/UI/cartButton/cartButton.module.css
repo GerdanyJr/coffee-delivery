@@ -13,10 +13,10 @@
 }
 .badge {
   position: absolute;
-  right: -30%;
-  top: -30%;
-  width: 60%;
-  height: 60%;
+  right: -25%;
+  top: -25%;
+  width: 1.8em;
+  height: 1.8em;
   background-color: var(--yellow-dark);
   color: var(--white);
   border-radius: 50%;

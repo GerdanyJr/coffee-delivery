@@ -2,6 +2,7 @@
   display: flex;
   background-color: var(--base-card);
   padding: 8px 4px;
+  width: max-content;
 }
 .cartContainer img {
   margin-right: 20px;
@@ -11,11 +12,9 @@
 .cartContainer .column {
   display: flex;
   flex-direction: column;
+  margin-right: 4em;
 }
-.cartContainer .details {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
+.coffee_name {
   margin-bottom: 8px;
   gap: 30px;
   font-family: var(--roboto);
@@ -26,7 +25,7 @@
   color: var(--base-subtitle);
   font-weight: 400;
 }
-.cartContainer .details span {
+.price {
   font-size: 16px;
   font-weight: 700;
   line-height: 130%;

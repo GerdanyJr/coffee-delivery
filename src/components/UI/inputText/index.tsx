@@ -4,6 +4,7 @@ import styles from "./inputText.module.css";
 interface InputTextProps extends React.HTMLAttributes<HTMLInputElement> {
   value: string;
   placeholder: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   type?: "text" | "number";
   required?: boolean;
 }

@@ -1,17 +1,23 @@
-import productImage from "../../../../public/assets/img/Image-1.png";
+import { Coffee } from "@/@types/interface/coffee";
 import { InputNumber } from "../inputNumber";
 import { ShoppingCartButton } from "../shoppingCartButton";
 import styles from "./productCard.module.css";
-function ProductCard() {
+function ProductCard({ description, image, name, price, tags }: Coffee) {
   return (
     <div className={styles.productCardContainer}>
-      <img src={productImage.src} alt="Café expresso" />
-      <span className={styles.coffeeTag}>Tradicional</span>
-      <h2>Expresso tradicional</h2>
-      <p>O tradicional café feito com água quente e grãos moídos</p>
+      <img src={image} alt={name} />
+      <div className={styles.tag_container}>
+        {tags.map((tag) => (
+          <span className={styles.coffeeTag} key={tag}>
+            {tag}
+          </span>
+        ))}
+      </div>
+      <h2>{name}</h2>
+      <p>{description}</p>
       <div className={styles.priceContainer}>
         <span>
-          R$ <strong>9,90</strong>
+          R$ <strong>{price}</strong>
         </span>
         <div className={styles.shopContainer}>
           <InputNumber />
