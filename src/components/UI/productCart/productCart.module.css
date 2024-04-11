@@ -18,6 +18,7 @@
   justify-content: space-between;
   margin-bottom: 8px;
   gap: 30px;
+  font-family: var(--roboto);
 }
 .cartContainer .details h2 {
   font-size: 16px;
@@ -35,4 +36,5 @@
   display: flex;
   width: 171px;
   justify-content: space-between;
+  font-family: var(--roboto);
 }
