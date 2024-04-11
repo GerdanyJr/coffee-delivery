@@ -2,13 +2,14 @@ import React from "react";
 import styles from "./inputText.module.css";
 
 interface InputTextProps extends React.HTMLAttributes<HTMLInputElement> {
-
   value: string;
   placeholder: string;
+  type?: "text" | "number";
   required?: boolean;
 }
 
 export function InputText({
+  type,
   required,
   value,
   placeholder,
@@ -19,6 +20,7 @@ export function InputText({
       <input
         placeholder={placeholder}
         value={value}
+        type={type ?? "text"}
         {...props}
         className={styles.input}
       />
