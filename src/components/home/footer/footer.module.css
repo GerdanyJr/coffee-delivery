@@ -85,6 +85,7 @@
   font-weight: bold;
   text-transform: uppercase;
   cursor: pointer;
+  font-family: var(--roboto);
 }
 .languageAndRights header button img {
   height: 1.4em;
