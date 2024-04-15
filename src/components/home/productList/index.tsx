@@ -1,7 +1,6 @@
 "use client";
 import { Coffee } from "@/@types/interface/coffee";
 import ProductCard from "../../UI/productCard";
-import styles from "./productList.module.css";
 
 export function ProductList({
   title,
@@ -12,8 +11,10 @@ export function ProductList({
 }) {
   return (
     <>
-      <h2 className={styles.title}>{title}</h2>
-      <div className={styles.list}>
+      <h2 className="font-baloo my-16 text-3xl font-bold text-base-subtitle">
+        {title}
+      </h2>
+      <div className="flex justify-center flex-wrap gap-x-7 gap-y-8">
         {items.map((cooffe) => (
           <ProductCard
             key={cooffe.name}
