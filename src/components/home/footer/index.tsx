@@ -30,7 +30,7 @@ export default function Footer() {
         </div>
         <div className={styles.partnershipp}>
           <h3>Coffee Delivery</h3>
-          <Link href="">Do what you can' t</Link>
+          <Link href="">Do what you can't</Link>
           <Link href="">Junte-se a nós</Link>
           <Link href="">Coffee Delivery Club</Link>
           <Link href="">Coffee Delivery Social</Link>
