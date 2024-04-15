@@ -1,6 +1,5 @@
 "use client";
 import { Bank, CreditCard, Money } from "@phosphor-icons/react/dist/ssr";
-import styles from "./options.module.css";
 import { Option } from "../option";
 const items = [
   {
@@ -28,7 +27,7 @@ export default function Options({
   onClick: (id: string) => void;
 }) {
   return (
-    <div className={styles.options}>
+    <div className="flex gap-4 mt-4">
       {items.map((item) => (
         <Option
           key={item.id}
