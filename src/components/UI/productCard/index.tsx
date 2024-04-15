@@ -1,25 +1,32 @@
 import { Coffee } from "@/@types/interface/coffee";
 import { InputNumber } from "../inputNumber";
 import { ShoppingCartButton } from "../shoppingCartButton";
-import styles from "./productCard.module.css";
 function ProductCard({ description, image, name, price, tags }: Coffee) {
   return (
-    <div className={styles.productCardContainer}>
-      <img src={image} alt={name} />
-      <div className={styles.tag_container}>
+    <div className="flex flex-col bg-base-card rounded-tl-md rounded-br-md rounded-tr-[36px] rounded-bl-[36px] w-min items-center font-roboto">
+      <img className="w-[120px] h-[120px] -mt-5 mb-4" src={image} alt={name} />
+      <div className="flex w-[90%] flex-wrap justify-center mb-4 gap-1">
         {tags.map((tag) => (
-          <span className={styles.coffeeTag} key={tag}>
+          <span
+            className="bg-yellow-light uppercase text-yellow-dark text-[10px] font-bold rounded-full py-1 px-2"
+            key={tag}
+          >
             {tag}
           </span>
         ))}
       </div>
-      <h2>{name}</h2>
-      <p>{description}</p>
-      <div className={styles.priceContainer}>
-        <span>
-          R$ <strong>{price}</strong>
+      <h2 className="mb-2 text-xl font-bold leading-snug font-baloo">{name}</h2>
+      <p className="mb-8 text-sm leading-snug text-center text-base-label mx-5 w-[216px]">
+        {description}
+      </p>
+      <div className=" mb-5 flex items-center justify-between w-[208px]">
+        <span className="text-base-text font-normal text-sm leading-snug">
+          R${" "}
+          <strong className="font-extrabold text-2xl leading-snug font-baloo">
+            {price}
+          </strong>
         </span>
-        <div className={styles.shopContainer}>
+        <div className="flex items-center gap-2">
           <InputNumber />
           <ShoppingCartButton size={22} />
         </div>
