@@ -11,18 +11,18 @@ export function ProductCart({
   className?: string;
 }) {
   return (
-    <div className="flex px-1 py-2 bg-base-card w-max">
-      <img src={productImage.src} alt="" className="w-16 h-16 mr-5 " />
-      <div className="flex flex-col gap-2">
-        <h2 className="mb-2 leading-snug font-roboto text-base-subtitle ">
-          {name}
-        </h2>
-        <div className="flex w-[171px] justify-between font-roboto gap-2">
-          <InputNumber />
-          <SecondaryButton label="Remover" />
+    <div className={`flex bg-base-card justify-between ${className}`}>
+      <div className="flex items-center gap-5">
+        <img src={productImage.src} className="size-20" alt="" />
+        <div className="flex flex-col gap-2">
+          <h2 className="font-light font-roboto text-base-subtitle">{name}</h2>
+          <div className="flex justify-between gap-2 font-roboto">
+            <InputNumber />
+            <SecondaryButton label="Remover" />
+          </div>
         </div>
       </div>
-      <span className="font-bold leading-snug text-base-text font-roboto">
+      <span className="font-bold text-md font-roboto text-base-text">
         R$ {price}
       </span>
     </div>
