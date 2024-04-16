@@ -12,7 +12,7 @@ export function OrderSummary({ className }: { className?: string }) {
       <h2 className="mb-2 text-lg font-bold font-baloo text-base-subtitle">
         Cafés selecionados
       </h2>
-      <div className="rounded-tl-lg rounded-br-lg rounded-bl-3xl p-9 bg-base-card rounded-tr-3xl">
+      <div className="px-5 rounded-tl-lg rounded-br-lg py-9 rounded-bl-3xl lg:p-9 bg-base-card rounded-tr-3xl">
         <div className="flex flex-col gap-6 pb-7">
           <ProductCart
             name="Café expresso"

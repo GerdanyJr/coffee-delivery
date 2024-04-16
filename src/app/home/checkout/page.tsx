@@ -5,12 +5,12 @@ import { OrderSummary } from "@/components/checkout/orderSummary";
 
 export default function Checkout() {
   return (
-    <div className="flex justify-between gap-8 mt-20">
-      <div className="flex flex-col w-3/5 gap-4">
+    <div className="flex flex-col justify-between gap-8 mt-20 lg:flex-row lg:gap-4">
+      <OrderSummary className="w-full lg:order-1" />
+      <div className="flex flex-col w-full gap-4">
         <CheckoutAddress />
         <Payment />
       </div>
-      <OrderSummary className="w-2/5" />
     </div>
   );
 }
