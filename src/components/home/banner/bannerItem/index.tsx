@@ -1,5 +1,3 @@
-import styles from "./bannerItem.module.css";
-
 export function BannerItem({
   icon,
   title,
@@ -8,7 +6,7 @@ export function BannerItem({
   title: string;
 }) {
   return (
-    <div className={styles.banner_item}>
+    <div className="flex items-center text-base-text font-roboto font-light gap-2">
       {icon}
       <p>{title}</p>
     </div>
