@@ -13,7 +13,7 @@ export function CreditCardButton({
   const checkedClasses = "border-purple bg-purple-light";
   return (
     <button
-      className={`bg-base-button border-[1px] rounded-md text-base-text w-44 hover:bg-base-hover p-4 ${
+      className={`bg-base-button border-[1px] rounded-md text-base-text hover:bg-base-hover p-4 ${
         checked && checkedClasses
       }`}
       onClick={onClick}
