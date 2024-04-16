@@ -67,6 +67,6 @@
 }
 .productCardContainer .shopContainer {
   display: flex;
-  align-itens: center;
+  align-items:  center;
   gap: 8px;
 }

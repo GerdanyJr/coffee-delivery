@@ -14,15 +14,51 @@ export function CheckoutAddress() {
           </div>
         </div>
         <form action="">
-          <InputText placeholder="CEP" required />
-          <InputText placeholder="Rua" required />
-
-          <InputText placeholder="Número" required />
-          <InputText placeholder="Complemento" />
-
-          <InputText placeholder="Bairro" required />
-          <InputText placeholder="Cidade" required />
-          <InputText placeholder="UF" required />
+          <InputText
+            placeholder="CEP"
+            required
+            value={""}
+            onChange={() => {}}
+          />
+          <InputText
+            placeholder="Rua"
+            required
+            value={""}
+            onChange={() => {}}
+          />
+          <div>
+            <InputText
+              placeholder="Número"
+              required
+              value={""}
+              onChange={() => {}}
+            />
+            <InputText
+              placeholder="Complemento"
+              value={""}
+              onChange={() => {}}
+            />
+          </div>
+          <div>
+            <InputText
+              placeholder="Bairro"
+              required
+              value={""}
+              onChange={() => {}}
+            />
+            <InputText
+              placeholder="Cidade"
+              required
+              value={""}
+              onChange={() => {}}
+            />
+            <InputText
+              placeholder="UF"
+              required
+              value={""}
+              onChange={() => {}}
+            />
+          </div>
         </form>
       </div>
     </div>

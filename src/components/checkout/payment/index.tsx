@@ -1,18 +1,17 @@
 "use client";
 
 import { CurrencyDollar } from "@phosphor-icons/react/dist/ssr";
-import styles from "./payment.module.css";
 import Options from "./options";
 import { useState } from "react";
 export function Payment() {
   const [selected, setSelected] = useState("");
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>
+    <div className="bg-base-card font-roboto rounded-md p-10 flex flex-col ">
+      <div className="flex gap-2">
         <CurrencyDollar size={20} color="var(--purple)" />
         <span>
-          <p className={styles.title}>Pagamento</p>
-          <p className={styles.subtitle}>
+          <p className="text-base-subtitle">Pagamento</p>
+          <p className="text-base-text text-sm">
             O pagamento é feito na entrega. Escolha a forma que deseja pagar
           </p>
         </span>

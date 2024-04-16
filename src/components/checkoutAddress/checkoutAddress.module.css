@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
-  width: 640px;
+  font-family: var(--roboto);
 }
 .orderCheck h2 {
   font-family: var(--balloo-2);
@@ -38,23 +38,34 @@
   line-height: 130%;
   color: var(--base-text);
 }
-
+.addressContainer form{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.addressContainer form div:first-child {
+  display: grid;
+  grid-template-columns: 200px;
+}
 .addressContainer form div:nth-child(2) input {
   width: 100%;
-  margin-top: 16px;
 }
-.addressContainer form div:nth-child(3) input,
-.addressContainer form div:nth-child(5) input {
-  margin-right: 12px;
-  margin-top: 16px;
+.addressContainer form div:nth-child(3) {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 14px;
 }
-.addressContainer form div:nth-child(4) input {
-  width: 348px;
+.addressContainer form div:nth-child(3) input:first-child{
+  width: 100%;
 }
-.addressContainer form div:nth-child(6) input {
-  width: 276px;
-  margin-right: 12px;
+.addressContainer form div:nth-child(4) {
+  display: grid;
+  grid-template-columns: 200px 1fr 60px;
+  gap: 14px;
 }
-.addressContainer form div:last-child input {
+.addressContainer form div:nth-child(4) input:first-child{
+  width: 100%;
+}
+.addressContainer form div:nth-child(4) div:last-child input{
   width: 60px;
 }

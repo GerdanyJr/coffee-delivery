@@ -1,0 +1,109 @@
+.footerContainer {
+  margin-top: 2.5em;
+  display: flex;
+  flex-direction: column;
+  width: 100dvw;
+  font-family: var(--roboto);
+  background-color: var(--purple-light);
+}
+.footerContainer .contentWrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em 10em;
+}
+.navLinks,
+.partnershipp,
+.contactUs,
+.socialLinks {
+  padding-block: 0.6em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.navLinks h3,
+.partnershipp h3,
+.contactUs h3,
+.socialLinks h3 {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(var(--base-title));
+  margin-bottom: 0.3em;
+}
+.navLinks a,
+.partnershipp a,
+.contactUs a {
+  text-decoration: none;
+  color: var(--base-text);
+  font-size: 0.9em;
+}
+.contactUs a {
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+}
+
+.socialLinks a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2em;
+  width: 2em;
+  background-color: var(--purple-dark);
+  border-radius: 50%;
+}
+.socialLinks div {
+  display: flex;
+  gap: 0.5em;
+}
+.footerContainer .copyrigth {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--base-title);
+  padding: 2em 13em;
+}
+.languageAndRights {
+  padding: 2em 10em;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--base-label);
+  color: #fff;
+}
+.languageAndRights header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.9em;
+}
+.languageAndRights header button {
+  display: flex;
+  align-items: center;
+  gap:0.5em;
+  height: 1.25em;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: var(--roboto);
+}
+.languageAndRights header button img {
+  height: 1.4em;
+}
+.languageAndRights header nav {
+  display: flex;
+  gap: 1.25em;
+}
+.languageAndRights header a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.9em;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 130%;
+}
+.languageAndRights p {
+  font-size: 0.8em;
+  font-weight: normal;
+  line-height: 130%;
+}
