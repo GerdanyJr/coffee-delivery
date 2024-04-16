@@ -1,5 +1,4 @@
 import Header from "@/components/home/header";
-import styles from "./page.module.css";
 import type { Metadata } from "next";
 import Footer from "@/components/home/footer";
 export const metadata: Metadata = {
@@ -13,7 +12,7 @@ export default function HomeLayout({
 }>) {
   return (
     <div>
-      <div className={styles.layout_container}>
+      <div className="mx-40 my-8">
         <Header />
         {children}
       </div>

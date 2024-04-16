@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import styles from "./primaryButton.module.css";
 interface PrimaryButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   label: string;
@@ -8,7 +7,12 @@ interface PrimaryButtonProps
 
 export function PrimaryButton({ label, ...props }: PrimaryButtonProps) {
   return (
-    <button {...props} className={`${styles.button} ${props.className ?? ""}`}>
+    <button
+      {...props}
+      className={`bg-yellow cursor-pointer font-roboto text-white font-semibold uppercase rounded-md px-4 py-3 hover:bg-yellow-dark ${
+        props.className ?? ""
+      }`}
+    >
       {label}
     </button>
   );
