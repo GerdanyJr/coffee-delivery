@@ -1,7 +1,6 @@
 .cartContainer {
   display: flex;
   background-color: var(--base-card);
-  padding: 8px 4px;
   width: max-content;
 }
 .cartContainer img {
