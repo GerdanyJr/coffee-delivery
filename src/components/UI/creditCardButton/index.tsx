@@ -1,4 +1,3 @@
-import styles from "./creditCardButton.module.css";
 import React from "react";
 export function CreditCardButton({
   icon,
@@ -11,14 +10,17 @@ export function CreditCardButton({
   checked: boolean;
   onClick: () => void;
 }) {
+  const checkedClasses = "border-purple bg-purple-light";
   return (
     <button
-      className={`${styles.creditCard} ${checked ? styles.checked : ""}`}
+      className={`bg-base-button border-[1px] rounded-md text-base-text w-44 hover:bg-base-hover p-4 ${
+        checked && checkedClasses
+      }`}
       onClick={onClick}
     >
-      <span>
+      <span className="flex items-center gap-2">
         {icon}
-        {title}
+        <span className="text-xs uppercase ">{title}</span>
       </span>
     </button>
   );
