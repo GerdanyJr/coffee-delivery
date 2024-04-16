@@ -5,6 +5,7 @@ interface InputTextProps extends React.HTMLAttributes<HTMLInputElement> {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   type?: "text" | "number";
   required?: boolean;
+  className?: string;
 }
 
 export function InputText({
@@ -12,11 +13,13 @@ export function InputText({
   required,
   value,
   placeholder,
+  className,
   ...props
 }: InputTextProps) {
   return (
-    <div className="relative inline">
+    <div className={`${className} relative inline`}>
       <input
+        className={`text-base-text bg-base-input p-4 rounded-lg border-2  border-transparent w-full focus:border-yellow-dark outline-none`}
         placeholder={placeholder}
         value={value}
         type={type ?? "text"}
@@ -24,7 +27,7 @@ export function InputText({
         className="p-4 border-2 border-transparent rounded-lg text-base-text bg-base-input focus:outline-none focus:border-yellow-dark"
       />
       {value?.length === 0 && !required && (
-        <span className="absolute text-sm italic -translate-y-1/2 font-sm font-roboto top-1/2 right-3 text-base-label">
+        <span className="absolute text-xs italic -translate-y-1/2 font-roboto top-1/2 right-3 text-base-label">
           Opcional
         </span>
       )}
