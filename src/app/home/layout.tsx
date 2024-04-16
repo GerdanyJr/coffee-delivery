@@ -12,7 +12,7 @@ export default function HomeLayout({
 }>) {
   return (
     <div>
-      <div className="mx-40 my-8">
+      <div className="mx-8 my-8 lg:mx-16 xl:mx-40">
         <Header />
         {children}
       </div>
