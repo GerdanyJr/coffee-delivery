@@ -3,16 +3,16 @@ import { ProductCart } from "@/components/UI/productCart";
 import { PrimaryButton } from "@/components/UI/primaryButton";
 import { useRouter } from "next/navigation";
 
-export function OrderSummary() {
+export function OrderSummary({ className }: { className?: string }) {
   const checkoutClasses = "text-md flex justify-between";
   const checkoutPrice = "text-lg";
   const router = useRouter();
   return (
-    <div>
+    <div className={className}>
       <h2 className="mb-2 text-lg font-bold font-baloo text-base-subtitle">
         Cafés selecionados
       </h2>
-      <div className="rounded-t-lg p-9 bg-base-card rounded-br-3xl">
+      <div className="rounded-tl-lg rounded-br-lg rounded-bl-3xl p-9 bg-base-card rounded-tr-3xl">
         <div className="flex flex-col gap-6 pb-7">
           <ProductCart
             name="Café expresso"
