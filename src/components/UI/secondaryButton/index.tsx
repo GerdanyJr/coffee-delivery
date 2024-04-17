@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import styles from "./secondaryButton.module.css";
 import { Trash } from "@phosphor-icons/react";
 interface SecondaryButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -12,9 +11,14 @@ export default function SecondaryButton({
   ...props
 }: SecondaryButtonProps) {
   return (
-    <button className={styles.button} {...props}>
+    <button
+      className="flex items-center gap-1 p-2 rounded-md cursor-pointer bg-base-button hover:bg-base-hover"
+      {...props}
+    >
       <Trash color="#8047F8" size="16" />
-      <span>{label}</span>
+      <span className="text-xs font-normal uppercase font-roboto text-base-text">
+        {label}
+      </span>
     </button>
   );
 }

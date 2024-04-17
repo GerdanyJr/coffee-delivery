@@ -1,8 +1,0 @@
-.header {
-  display: flex;
-  justify-content: space-between;
-}
-.actions {
-  display: flex;
-  gap: 0.7em
-}

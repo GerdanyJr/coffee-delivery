@@ -1,5 +1,4 @@
 import { CreditCardButton } from "@/components/UI/creditCardButton";
-import styles from "./option.module.css";
 interface OptionProps {
   id: string;
   name: string;
@@ -29,7 +28,7 @@ export function Option({
         checked={checked}
         required
         readOnly
-        className={styles.input}
+        className="hidden"
       />
       <label htmlFor={id}>
         <CreditCardButton

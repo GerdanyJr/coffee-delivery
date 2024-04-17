@@ -1,5 +1,4 @@
 import React from "react";
-
 interface InputTextProps extends React.HTMLAttributes<HTMLInputElement> {
   value: string;
   placeholder: string;
@@ -20,7 +19,7 @@ export function InputText({
   return (
     <div className={`${className} relative inline`}>
       <input
-        className={`text-base-text bg-base-input p-4 rounded-lg border-2  border-transparent w-full focus:border-yellow-dark outline-none`}
+        className="w-full p-4 border-2 border-transparent rounded-lg outline-none text-base-text bg-base-input focus:border-yellow-dark"
         placeholder={placeholder}
         value={value}
         type={type ?? "text"}

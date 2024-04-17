@@ -10,17 +10,17 @@ export function CreditCardButton({
   checked: boolean;
   onClick: () => void;
 }) {
-  const defaultStyle = "rounded-md text-base-text border-[1px]  bg-base-button";
-  const checkedStyle =
-    "rounded-md text-base-text border-[1px] border-purple bg-purple-light";
+  const checkedClasses = "border-purple bg-purple-light";
   return (
     <button
-      className={`${defaultStyle} ${checked ? checkedStyle : ""}`}
+      className={`bg-base-button border-[1px] rounded-md text-base-text hover:bg-base-hover p-4 ${
+        checked && checkedClasses
+      }`}
       onClick={onClick}
     >
-      <span className="flex items-center gap-3 p-4 text-xs leading-relaxed uppercase ">
+      <span className="flex items-center gap-2">
         {icon}
-        {title}
+        <span className="text-xs uppercase ">{title}</span>
       </span>
     </button>
   );
