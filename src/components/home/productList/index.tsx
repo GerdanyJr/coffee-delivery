@@ -1,28 +1,30 @@
-"use client";
 import { Coffee } from "@/@types/interface/coffee";
 import ProductCard from "../../UI/productCard";
 
 export function ProductList({
   title,
-  items,
+  products,
+  totalPages,
 }: {
   title: string;
-  items: Coffee[];
+  products: Coffee[];
+  totalPages: number;
 }) {
+  console.log(totalPages);
   return (
     <>
-      <h2 className="font-baloo my-16 text-3xl font-bold text-base-subtitle">
-        {title}
-      </h2>
-      <div className="flex justify-center flex-wrap gap-x-7 gap-y-8">
-        {items.map((cooffe) => (
+
+      <h2 className="mx-0 my-12 text-[32px] font-baloo">{title}</h2>
+      <div className="flex flex-wrap gap-y-9 gap-x-8">
+        {products?.map((product) => (
           <ProductCard
-            key={cooffe.name}
-            image={cooffe.image}
-            tags={cooffe.tags}
-            name={cooffe.name}
-            description={cooffe.description}
-            price={cooffe.price}
+            key={product.id}
+            id={product.id}
+            image={`http://localhost:8080/${product.image}`}
+            categories={product.categories}
+            price={product.price}
+            name={product.name}
+            description={product.description}
           />
         ))}
       </div>
