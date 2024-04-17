@@ -84,26 +84,24 @@ export function Slider({
                 e.stopPropagation() || instanceRef.current?.next()
               }
             />
+            <div className="flex justify-center gap-2">
+              {instanceRef.current.track.details.slides.map((_, index) => {
+                return (
+                  <button
+                    key={index}
+                    onClick={() => {
+                      instanceRef.current?.moveToIdx(index);
+                    }}
+                    className={`w-4 h-4 rounded-full ${
+                      currentSlide === index ? "bg-black" : "bg-gray-400"
+                    }`}
+                  ></button>
+                );
+              })}
+            </div>
           </>
         )}
       </div>
-      {created && instanceRef.current && (
-        <div className="flex justify-center gap-2">
-          {instanceRef.current.track.details.slides.map((slide, index) => {
-            return (
-              <button
-                key={index}
-                onClick={() => {
-                  instanceRef.current?.moveToIdx(index);
-                }}
-                className={`w-4 h-4  rounded-full ${
-                  currentSlide === index ? "bg-black" : "bg-gray-400"
-                }`}
-              ></button>
-            );
-          })}
-        </div>
-      )}
     </div>
   );
 }
