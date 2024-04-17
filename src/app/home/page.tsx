@@ -13,8 +13,8 @@ export default function Home() {
   const [currentPage, setCurrentPage] = useState(1);
   useEffect(() => {
     async function loadProducts() {
-      const response = await fetch("http://localhost:8080/coffee");
-      const data = (await response.json()) as Pages;
+      const response = await api.get("/coffee");
+      const data = (await response.data) as Pages;
 
       setTotalPages(data.totalPages);
       setProducts(data.results);
