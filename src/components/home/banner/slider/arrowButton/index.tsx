@@ -10,8 +10,8 @@ export function ArrowButton({
   return (
     <button
       className={`absolute ${
-        left ? "left" : "right"
-      }-0 -translate-y-1/2 top-1/2`}
+        left ? "left-0" : "right-0"
+      } -translate-y-1/2 top-1/2`}
       onClick={onClick}
     >
       {left && <CaretCircleLeft size={40} />}
