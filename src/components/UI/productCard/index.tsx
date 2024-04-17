@@ -24,7 +24,7 @@ function ProductCard({ description, image, name, price, categories }: Coffee) {
         <span className="text-sm font-normal leading-snug text-base-text">
           R${" "}
           <strong className="text-2xl font-extrabold leading-snug font-baloo">
-            {price}
+            {parseFloat(price).toFixed(2)}
           </strong>
         </span>
         <div className="flex items-center gap-2">
