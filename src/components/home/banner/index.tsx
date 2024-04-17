@@ -1,25 +1,16 @@
-import React from "react";
-import image from "@/../public/assets/img/Coffee.png";
 import PurpleCooffee from "../../../../public/assets/svg/PurpleCooffee";
 import CartIcon from "../../../../public/assets/svg/CartIcon";
 import Box from "../../../../public/assets/svg/Box";
 import Clock from "../../../../public/assets/svg/Clock";
 import { BannerItem } from "./bannerItem";
-import { Slider } from "./slider";
+import { BannerImage } from "./bannerImage";
 
 export default function Banner() {
   const itemsClasses = "flex flex-col gap-4";
+
   return (
     <div className="flex flex-col mt-8 text-center lg:text-start lg:flex-row lg:mt-24 lg:items-center">
-      <img
-        src={image.src}
-        alt="A cooffee cup"
-        className="hidden w-full mx-auto mb-4 lg:block lg:order-1 lg:w-2/5"
-      />
-      <Slider
-        images={[image.src, image.src, image.src]}
-        className="lg:hidden"
-      />
+      <BannerImage />
       <div>
         <div>
           <h2 className="mb-4 text-5xl font-bold font-baloo md:text-6xl">
@@ -30,7 +21,7 @@ export default function Banner() {
             hora
           </p>
         </div>
-        <div className="flex flex-col gap-4 mt-8 md:flex-row md:justify-around">
+        <div className="flex flex-col gap-4 mt-8 md:gap-10 md:flex-row">
           <div className={itemsClasses}>
             <BannerItem icon={<CartIcon />} title="Compra simples e segura" />
             <BannerItem icon={<Clock />} title="Entrega rápida e rastreada" />
