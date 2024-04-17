@@ -5,6 +5,7 @@ import CartIcon from "../../../../public/assets/svg/CartIcon";
 import Box from "../../../../public/assets/svg/Box";
 import Clock from "../../../../public/assets/svg/Clock";
 import { BannerItem } from "./bannerItem";
+import { Slider } from "./slider";
 
 export default function Banner() {
   const itemsClasses = "flex flex-col gap-4";
@@ -13,7 +14,11 @@ export default function Banner() {
       <img
         src={image.src}
         alt="A cooffee cup"
-        className="w-full mx-auto mb-4 lg:order-1 lg:w-2/5"
+        className="hidden w-full mx-auto mb-4 lg:block lg:order-1 lg:w-2/5"
+      />
+      <Slider
+        images={[image.src, image.src, image.src]}
+        className="lg:hidden"
       />
       <div>
         <div>
