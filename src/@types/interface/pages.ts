@@ -1,9 +1,7 @@
-import { Coffee } from './coffee';
-
-export interface Pages {
+export interface Pages<T> {
   pageNumber: number;
   totalPages: number;
-  results: Coffee[];
+  results: T[];
   pageSize: number;
   numberOfElements: number;
 }
