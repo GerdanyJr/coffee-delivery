@@ -1,6 +1,7 @@
 export interface Coffee {
+  id: string;
   image: string;
-  tags: string[];
+  categories: [{ name: string; id: string }];
   name: string;
   description: string;
   price: string;
