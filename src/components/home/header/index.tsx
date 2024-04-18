@@ -4,9 +4,9 @@ import Link from "next/link";
 import Location from "./location";
 import CartButton from "@/components/UI/cartButton";
 
-export default function Header() {
+export function Header() {
   return (
-    <header className="flex justify-between">
+    <header className="flex justify-between mx-4 lg:mx-16 xl:mx-40">
       <Link href="/home">
         <CoffeDeliveryLogo />
       </Link>

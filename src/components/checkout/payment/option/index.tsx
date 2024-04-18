@@ -19,7 +19,7 @@ export function Option({
   onClick,
 }: OptionProps) {
   return (
-    <>
+    <div className="w-full">
       <input
         id={id}
         type="radio"
@@ -38,6 +38,6 @@ export function Option({
           onClick={() => onClick(id)}
         />
       </label>
-    </>
+    </div>
   );
 }
