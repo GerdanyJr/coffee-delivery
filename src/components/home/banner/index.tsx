@@ -21,7 +21,7 @@ export default function Banner() {
             hora
           </p>
         </div>
-        <div className="flex flex-col gap-4 mt-8 md:gap-10 md:flex-row">
+        <div className="flex flex-col gap-4 mt-8 md:justify-around md:flex-row">
           <div className={itemsClasses}>
             <BannerItem icon={<CartIcon />} title="Compra simples e segura" />
             <BannerItem icon={<Clock />} title="Entrega rápida e rastreada" />
