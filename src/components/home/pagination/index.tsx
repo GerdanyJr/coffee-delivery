@@ -24,7 +24,8 @@ export default function Pagination({
           onClick={() => {
             return currentPage > 0 && handleChangePage(1);
           }}
-          className={`${currentPage == 1 ? "text-base-label" : "text-black"}`}
+          disabled={currentPage === 1}
+          className={`${currentPage === 1 ? "text-base-label" : "text-black"}`}
         >
           <CaretDoubleLeft size={20} />
         </button>
@@ -32,7 +33,8 @@ export default function Pagination({
           onClick={() => {
             return currentPage > 1 && handleChangePage(currentPage - 1);
           }}
-          className={`${currentPage == 1 ? "text-base-label" : "text-black"}`}
+          disabled={currentPage === 1}
+          className={`${currentPage === 1 ? "text-base-label" : "text-black"}`}
         >
           <CaretLeft size={20} />
         </button>
@@ -41,7 +43,7 @@ export default function Pagination({
             key={index + 1}
             onClick={() => handleChangePage(index + 1)}
             className={`${
-              currentPage == index + 1
+              currentPage === index + 1
                 ? "bg-black px-2 rounded-lg text-white "
                 : "bg-transparent px-1 rounded-lg text-black "
             }`}
@@ -51,13 +53,19 @@ export default function Pagination({
         ))}
         <button
           onClick={() => handleChangePage(currentPage + 1)}
-          className={`${currentPage == 4 ? "text-base-label" : "text-black"}`}
+          disabled={currentPage === totalPages}
+          className={`${
+            currentPage === totalPages ? "text-base-label" : "text-black"
+          }`}
         >
           <CaretRight size={20} />
         </button>
         <button
           onClick={() => handleChangePage(totalPages)}
-          className={`${currentPage == 4 ? "text-base-label" : "text-black"}`}
+          disabled={currentPage === totalPages}
+          className={`${
+            currentPage === totalPages ? "text-base-label" : "text-black"
+          }`}
         >
           <CaretDoubleRight size={20} />
         </button>
