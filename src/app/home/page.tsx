@@ -21,11 +21,6 @@ export default function Home() {
     }
     loadProducts();
   }, []);
-  async function getDataApi(currentPage: number) {
-    const contentPage = await api.get(`/coffee?page=${currentPage}`);
-    const page = await contentPage.data;
-    return page;
-  }
 
   async function handleChangePage(currentPage: number) {
     const contentPage = await api.get(`/coffee?page=${currentPage - 1}`);
@@ -36,11 +31,7 @@ export default function Home() {
   return (
     <>
       <Banner />
-      <ProductList
-        title="Nossos cafés"
-        products={products}
-        totalPages={totalPages}
-      />
+      <ProductList title="Nossos cafés" products={products} />
       <Pagination
         totalPages={totalPages}
         handleChangePage={handleChangePage}

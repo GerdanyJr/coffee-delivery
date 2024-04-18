@@ -4,13 +4,10 @@ import ProductCard from "../../UI/productCard";
 export function ProductList({
   title,
   products,
-  totalPages,
 }: {
   title: string;
   products: Coffee[];
-  totalPages: number;
 }) {
-  console.log(totalPages);
   return (
     <>
       <h2 className="mx-2 mt-16 mb-16 text-3xl font-bold font-baloo text-base-subtitle md:mx-0 mb:my-0">
