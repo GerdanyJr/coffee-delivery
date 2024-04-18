@@ -13,9 +13,10 @@ export function ProductList({
   console.log(totalPages);
   return (
     <>
-
-      <h2 className="mx-0 my-12 text-[32px] font-baloo">{title}</h2>
-      <div className="flex flex-wrap gap-y-9 gap-x-8">
+      <h2 className="mx-2 mt-16 mb-16 text-3xl font-bold font-baloo text-base-subtitle md:mx-0 mb:my-0">
+        {title}
+      </h2>
+      <div className="flex flex-wrap justify-center gap-y-9 gap-x-8">
         {products?.map((product) => (
           <ProductCard
             key={product.id}
