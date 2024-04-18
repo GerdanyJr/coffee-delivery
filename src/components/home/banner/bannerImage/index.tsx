@@ -1,23 +1,10 @@
 "use client";
-import { useEffect, useState } from "react";
 import image from "@/../public/assets/img/Coffee.png";
 import { Slider } from "../slider";
+import { useWindowDimensions } from "@/hooks/useWindowDimensions";
 
 export function BannerImage() {
-  const [width, setWidth] = useState(0);
-
-  useEffect(() => {
-    setWidth(window.innerWidth);
-    const handleResize = () => {
-      setWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const { width } = useWindowDimensions();
   return (
     <>
       {width >= 1024 && (
