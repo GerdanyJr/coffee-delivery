@@ -14,7 +14,7 @@ export function ProductList({
   return (
     <>
 
-      <h2 className="mx-0 my-12 text-[32px] font-baloo">{title}</h2>
+      <h2 className="mx-0 my-12 text-[32px] font-baloo dark:text-purple-light">{title}</h2>
       <div className="flex flex-wrap gap-y-9 gap-x-8">
         {products?.map((product) => (
           <ProductCard

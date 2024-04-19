@@ -6,7 +6,7 @@ export function BannerItem({
   title: string;
 }) {
   return (
-    <div className="flex items-center text-base-text font-roboto font-light gap-2">
+    <div className="flex items-center gap-2 font-light text-base-text font-roboto dark:text-white">
       {icon}
       <p>{title}</p>
     </div>
