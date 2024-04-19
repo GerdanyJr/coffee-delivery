@@ -10,7 +10,7 @@ export function MobileProductList({ title }: { title: string }) {
 
   return (
     <>
-      <h2 className="mt-16 mb-8 text-3xl font-bold font-baloo text-base-subtitle ">
+      <h2 className="mt-16 mb-8 text-3xl font-bold text-center font-baloo text-base-subtitle ">
         {title}
       </h2>
       <div className="flex flex-wrap justify-center gap-y-9 gap-x-8">
