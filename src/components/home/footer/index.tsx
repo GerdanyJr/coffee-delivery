@@ -14,12 +14,12 @@ import {
 import brazilFlag from "../../../../public/assets/svg/BrazilFlag.png";
 export default function Footer() {
   const containers = "flex flex-col gap-2 py-2";
-  const containersTitle = "text-sm font-bold uppercase text-base-title mb-1";
-  const containersLink = " text-base-text text-sm";
+  const containersTitle = "text-sm font-bold uppercase text-base-title mb-1 dark:text-white";
+  const containersLink = " text-base-text text-sm dark:text-gray-400";
   const contactLink =
-    "flex items-center justify-center h-8 w-8 bg-purple-dark rounded-full";
+    "flex items-center justify-center h-8 w-8 bg-purple-dark rounded-full dark:bg-purple-light";
   return (
-    <div className="mt-10 flex flex-col w-dvw font-roboto bg-purple-light ">
+    <div className="flex flex-col mt-10 w-dvw font-roboto bg-purple-light dark:bg-purple-dark ">
       <div className="flex justify-between px-40 py-8">
         <div className={containers}>
           <h3 className={containersTitle}>Mapa do site</h3>
@@ -66,28 +66,28 @@ export default function Footer() {
 
         <div className={containers}>
           <h3 className={containersTitle}>Precisa de suporte?</h3>
-          <Link className="flex items-center gap-1" href="">
-            <ChatCircle size={16} weight="duotone" color="#8047f8" />
+          <Link className="flex items-center gap-1 dark:text-gray-200" href="">
+            <ChatCircle size={16} weight="duotone" className='text-purple dark:text-purple-light' />
             Chat Online
           </Link>
-          <Link className="flex items-center gap-1" href="">
-            <EnvelopeSimple size={16} weight="duotone" color="#8047f8" />
+          <Link className="flex items-center gap-1 dark:text-gray-200" href="">
+            <EnvelopeSimple size={16} weight="duotone" className='text-purple dark:text-purple-light' />
             E-mail
           </Link>
-          <Link className="flex items-center gap-1" href="">
-            <Phone size={16} weight="duotone" color="#8047f8" />
+          <Link className="flex items-center gap-1 dark:text-gray-200" href="">
+            <Phone size={16} weight="duotone" className='text-purple dark:text-purple-light' />
             Fale conosco
           </Link>
-          <Link className="flex items-center gap-1" href="">
-            <Monitor size={16} weight="duotone" color="#8047f8" />
+          <Link className="flex items-center gap-1 dark:text-gray-200" href="">
+            <Monitor size={16} weight="duotone" className='text-purple dark:text-purple-light' />
             Assistência Online
           </Link>
-          <Link className="flex items-center gap-1" href="">
-            <Monitor size={16} weight="duotone" color="#8047f8" />
+          <Link className="flex items-center gap-1 dark:text-gray-200" href="">
+            <Monitor size={16} weight="duotone" className='text-purple dark:text-purple-light' />
             Coffee Delivery Care
           </Link>
-          <Link className="flex items-center gap-1" href="">
-            <Monitor size={16} weight="duotone" color="#8047f8" />
+          <Link className="flex items-center gap-1 dark:text-gray-200" href="">
+            <Monitor size={16} weight="duotone" className='text-purple dark:text-purple-light' />
             Coffee Delivery Concierge
           </Link>
         </div>
@@ -99,52 +99,52 @@ export default function Footer() {
               target="_blank"
               href="https://www.facebook.com"
             >
-              <FacebookLogo size={22} color="#ebe5f9" weight="duotone" />
+              <FacebookLogo size={22} className='text-white dark:text-purple' weight="duotone" />
             </Link>
             <Link
               className={contactLink}
               target="_blank"
               href="https://twitter.com"
             >
-              <TwitterLogo size={22} color="#ebe5f9" weight="duotone" />
+              <TwitterLogo size={22}  className='text-white dark:text-purple' weight="duotone" />
             </Link>
             <Link
               className={contactLink}
               target="_blank"
               href="https://www.youtube.com"
             >
-              <YoutubeLogo size={22} color="#ebe5f9" weight="duotone" />
+              <YoutubeLogo size={22} className='text-white dark:text-purple' weight="duotone" />
             </Link>
             <Link
               className={contactLink}
               target="_blank"
               href="https://www.instagram.com/"
             >
-              <InstagramLogo size={22} color="#ebe5f9" weight="duotone" />
+              <InstagramLogo size={22} className='text-white dark:text-purple' weight="duotone" />
             </Link>
           </div>
         </div>
       </div>
-      <span className="text-xs uppercase text-base-title py-8 px-40">
+      <span className="px-40 py-8 text-xs uppercase text-base-title dark:text-gray-200">
         Copyright© 1995-2024 Coffee Delivery. Todos os direitos reservados.{" "}
       </span>
-      <div className="flex flex-col bg-base-label text-white py-8 px-40">
+      <div className="flex flex-col px-40 py-8 text-white bg-base-label dark:bg-gray-500">
         <header className="flex justify-between mb-4">
           <nav className="flex gap-5">
-            <Link className="font-bold uppercase leading-snug" href="">
+            <Link className="font-bold leading-snug uppercase" href="">
               Acessibilidade
             </Link>
-            <Link className="font-bold uppercase leading-snug" href="">
+            <Link className="font-bold leading-snug uppercase" href="">
               Termos & Condições Loja Online
             </Link>
-            <Link className="font-bold uppercase leading-snug" href="">
+            <Link className="font-bold leading-snug uppercase" href="">
               Privacidade
             </Link>
-            <Link className="font-bold uppercase leading-snug" href="">
+            <Link className="font-bold leading-snug uppercase" href="">
               Legal
             </Link>
           </nav>
-          <button className="flex items-center gap-2 h-5 font-bold uppercase cursor-pointer font-roboto">
+          <button className="flex items-center h-5 gap-2 font-bold uppercase cursor-pointer font-roboto">
             <img
               className="h-6"
               src={brazilFlag.src}
