@@ -1,6 +1,7 @@
-"use client";
 import Link from "next/link";
+import brazilFlag from "../../../../public/assets/svg/BrazilFlag.png";
 import {
+  YoutubeLogo,
   CaretRight,
   ChatCircle,
   EnvelopeSimple,
@@ -9,59 +10,34 @@ import {
   Monitor,
   Phone,
   TwitterLogo,
-  YoutubeLogo,
-} from "@phosphor-icons/react";
-import brazilFlag from "../../../../public/assets/svg/BrazilFlag.png";
+} from "@phosphor-icons/react/dist/ssr";
 export default function Footer() {
   const containers = "flex flex-col gap-2 py-2";
   const containersTitle = "text-sm font-bold uppercase text-base-title mb-1";
-  const containersLink = " text-base-text text-sm";
+  const containersLink = "text-base-text text-sm";
   const contactLink =
     "flex items-center justify-center h-8 w-8 bg-purple-dark rounded-full";
+
   return (
-    <div className="mt-10 flex flex-col w-dvw font-roboto bg-purple-light ">
+    <footer className="flex flex-col w-full mt-10 font-roboto bg-purple-light ">
       <div className="flex justify-between px-40 py-8">
-        <div className={containers}>
+        <div className={`${containers} ${containersLink}`}>
           <h3 className={containersTitle}>Mapa do site</h3>
-          <Link className={containersLink} href="home">
-            Início
-          </Link>
-          <Link className={containersLink} href="checkout">
-            Carrinho
-          </Link>
-          <Link className={containersLink} href="">
-            Quem somos
-          </Link>
-          <Link className={containersLink} href="">
-            Investidores
-          </Link>
-          <Link className={containersLink} href="">
-            Notícias
-          </Link>
-          <Link className={containersLink} href="">
-            Promoções
-          </Link>
-          <Link className={containersLink} href="">
-            FAQ Loja Online
-          </Link>
-          <Link className={containersLink} href="">
-            Celular Legal
-          </Link>
+          <Link href="home">Início</Link>
+          <Link href="checkout">Carrinho</Link>
+          <Link href="">Quem somos</Link>
+          <Link href="">Investidores</Link>
+          <Link href="">Notícias</Link>
+          <Link href="">Promoções</Link>
+          <Link href="">FAQ Loja Online</Link>
+          <Link href="">Celular Legal</Link>
         </div>
-        <div className={containers}>
+        <div className={`${containers} ${containersLink}`}>
           <h3 className={containersTitle}>Coffee Delivery</h3>
-          <Link className={containersLink} href="">
-            Do what you can't
-          </Link>
-          <Link className={containersLink} href="">
-            Junte-se a nós
-          </Link>
-          <Link className={containersLink} href="">
-            Coffee Delivery Club
-          </Link>
-          <Link className={containersLink} href="">
-            Coffee Delivery Social
-          </Link>
+          <Link href="">Do what you can't</Link>
+          <Link href="">Junte-se a nós</Link>
+          <Link href="">Coffee Delivery Club</Link>
+          <Link href="">Coffee Delivery Social</Link>
         </div>
 
         <div className={containers}>
@@ -125,26 +101,35 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <span className="text-xs uppercase text-base-title py-8 px-40">
+      <span className="px-40 py-8 text-xs uppercase text-base-title">
         Copyright© 1995-2024 Coffee Delivery. Todos os direitos reservados.{" "}
       </span>
-      <div className="flex flex-col bg-base-label text-white py-8 px-40">
-        <header className="flex justify-between mb-4">
-          <nav className="flex gap-5">
-            <Link className="font-bold uppercase leading-snug" href="">
-              Acessibilidade
-            </Link>
-            <Link className="font-bold uppercase leading-snug" href="">
-              Termos & Condições Loja Online
-            </Link>
-            <Link className="font-bold uppercase leading-snug" href="">
-              Privacidade
-            </Link>
-            <Link className="font-bold uppercase leading-snug" href="">
-              Legal
-            </Link>
-          </nav>
-          <button className="flex items-center gap-2 h-5 font-bold uppercase cursor-pointer font-roboto">
+      <div className="flex flex-col px-40 py-8 text-white bg-base-label">
+        <div className="flex justify-between mb-4">
+          <ul className="flex gap-5">
+            <li>
+              <Link className="font-bold leading-snug uppercase" href="">
+                Acessibilidade
+              </Link>
+            </li>
+            <li>
+              <Link className="font-bold leading-snug uppercase" href="">
+                Termos & Condições Loja Online
+              </Link>
+            </li>
+            <li>
+              <Link className="font-bold leading-snug uppercase" href="">
+                Privacidade
+              </Link>
+            </li>
+            <li>
+              <Link className="font-bold leading-snug uppercase" href="">
+                Legal
+              </Link>
+            </li>
+          </ul>
+
+          <button className="flex items-center h-5 gap-2 font-bold uppercase cursor-pointer font-roboto">
             <img
               className="h-6"
               src={brazilFlag.src}
@@ -153,7 +138,7 @@ export default function Footer() {
             <span>Brasil/Português</span>
             <CaretRight size={16} weight="fill" color="#fff" />
           </button>
-        </header>
+        </div>
         <p className="text-sm leading-snug">
           Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
         </p>
@@ -167,6 +152,6 @@ export default function Footer() {
           natus omnis? Corrupti ut minima vitae!
         </p>
       </div>
-    </div>
+    </footer>
   );
 }
