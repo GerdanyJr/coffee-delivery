@@ -10,7 +10,7 @@ export const ProductCard = forwardRef(
   ) => {
     return (
       <div
-        className="flex flex-col bg-base-card rounded-tl-md rounded-br-md rounded-tr-[36px] rounded-bl-[36px] w-min items-center font-roboto"
+        className="flex flex-col bg-base-card rounded-tl-md rounded-br-md rounded-tr-[36px] rounded-bl-[36px] w-min items-center justify-between font-roboto"
         ref={ref}
       >
         <img
