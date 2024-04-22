@@ -1,5 +1,5 @@
 import Link from "next/link";
-import brazilFlag from "../../../../public/assets/svg/BrazilFlag.png";
+import brazilFlag from "@/../public/assets/img/BrazilFlag.png";
 import {
   YoutubeLogo,
   CaretRight,
@@ -11,121 +11,107 @@ import {
   Phone,
   TwitterLogo,
 } from "@phosphor-icons/react/dist/ssr";
-export default function Footer() {
-  const containers = "flex flex-col gap-2 py-2";
-  const containersTitle = "text-sm font-bold uppercase text-base-title mb-1";
-  const containersLink = "text-base-text text-sm";
-  const contactLink =
-    "flex items-center justify-center h-8 w-8 bg-purple-dark rounded-full";
-
+import { ContactLink } from "./contactLink.tsx";
+import { FooterLink } from "./footerLink";
+import { FooterColumn } from "./footerColumn";
+export function Footer() {
   return (
     <footer className="flex flex-col w-full mt-10 font-roboto bg-purple-light ">
-      <div className="flex justify-between px-40 py-8">
-        <div className={`${containers} ${containersLink}`}>
-          <h3 className={containersTitle}>Mapa do site</h3>
-          <Link href="home">Início</Link>
-          <Link href="checkout">Carrinho</Link>
-          <Link href="">Quem somos</Link>
-          <Link href="">Investidores</Link>
-          <Link href="">Notícias</Link>
-          <Link href="">Promoções</Link>
-          <Link href="">FAQ Loja Online</Link>
-          <Link href="">Celular Legal</Link>
+      <div className="px-20 pb-8">
+        <div className="flex justify-between py-8">
+          <FooterColumn title="Mapa do site">
+            <Link href="home">Início</Link>
+            <Link href="checkout">Carrinho</Link>
+            <Link href="">Quem somos</Link>
+            <Link href="">Investidores</Link>
+            <Link href="">Notícias</Link>
+            <Link href="">Promoções</Link>
+            <Link href="">FAQ Loja Online</Link>
+            <Link href="">Celular Legal</Link>
+          </FooterColumn>
+          <FooterColumn title="Coffee Delivery">
+            <Link href="">Do what you can't</Link>
+            <Link href="">Junte-se a nós</Link>
+            <Link href="">Coffee Delivery Club</Link>
+            <Link href="">Coffee Delivery Social</Link>
+          </FooterColumn>
+          <FooterColumn title="Precisa de suporte?">
+            <FooterLink
+              href=""
+              logo={<ChatCircle size={16} weight="duotone" color="#8047f8" />}
+              title="Chat Online"
+            />
+            <FooterLink
+              href=""
+              logo={
+                <EnvelopeSimple size={16} weight="duotone" color="#8047f8" />
+              }
+              title="E-mail"
+            />
+            <FooterLink
+              href=""
+              logo={<Phone size={16} weight="duotone" color="#8047f8" />}
+              title="Assistência Online"
+            />
+            <FooterLink
+              href=""
+              logo={<Monitor size={16} weight="duotone" color="#8047f8" />}
+              title="Coffee Delivery Care"
+            />
+            <FooterLink
+              href=""
+              logo={<Monitor size={16} weight="duotone" color="#8047f8" />}
+              title="Coffee Delivery Concierge"
+            />
+          </FooterColumn>
+          <FooterColumn title="Siga-nos">
+            <div className="flex gap-2">
+              <ContactLink
+                href="https://www.facebook.com"
+                logo={
+                  <FacebookLogo size={22} color="#ebe5f9" weight="duotone" />
+                }
+              />
+              <ContactLink
+                href="https://twitter.com"
+                logo={
+                  <TwitterLogo size={22} color="#ebe5f9" weight="duotone" />
+                }
+              />
+              <ContactLink
+                href="https://www.youtube.com"
+                logo={
+                  <YoutubeLogo size={22} color="#ebe5f9" weight="duotone" />
+                }
+              />
+              <ContactLink
+                href="https://www.instagram.com/"
+                logo={
+                  <InstagramLogo size={22} color="#ebe5f9" weight="duotone" />
+                }
+              />
+            </div>
+          </FooterColumn>
         </div>
-        <div className={`${containers} ${containersLink}`}>
-          <h3 className={containersTitle}>Coffee Delivery</h3>
-          <Link href="">Do what you can't</Link>
-          <Link href="">Junte-se a nós</Link>
-          <Link href="">Coffee Delivery Club</Link>
-          <Link href="">Coffee Delivery Social</Link>
-        </div>
-
-        <div className={containers}>
-          <h3 className={containersTitle}>Precisa de suporte?</h3>
-          <Link className="flex items-center gap-1" href="">
-            <ChatCircle size={16} weight="duotone" color="#8047f8" />
-            Chat Online
-          </Link>
-          <Link className="flex items-center gap-1" href="">
-            <EnvelopeSimple size={16} weight="duotone" color="#8047f8" />
-            E-mail
-          </Link>
-          <Link className="flex items-center gap-1" href="">
-            <Phone size={16} weight="duotone" color="#8047f8" />
-            Fale conosco
-          </Link>
-          <Link className="flex items-center gap-1" href="">
-            <Monitor size={16} weight="duotone" color="#8047f8" />
-            Assistência Online
-          </Link>
-          <Link className="flex items-center gap-1" href="">
-            <Monitor size={16} weight="duotone" color="#8047f8" />
-            Coffee Delivery Care
-          </Link>
-          <Link className="flex items-center gap-1" href="">
-            <Monitor size={16} weight="duotone" color="#8047f8" />
-            Coffee Delivery Concierge
-          </Link>
-        </div>
-        <div className={containers}>
-          <h3 className={containersTitle}>Siga-nos</h3>
-          <div className="flex gap-2">
-            <Link
-              className={contactLink}
-              target="_blank"
-              href="https://www.facebook.com"
-            >
-              <FacebookLogo size={22} color="#ebe5f9" weight="duotone" />
-            </Link>
-            <Link
-              className={contactLink}
-              target="_blank"
-              href="https://twitter.com"
-            >
-              <TwitterLogo size={22} color="#ebe5f9" weight="duotone" />
-            </Link>
-            <Link
-              className={contactLink}
-              target="_blank"
-              href="https://www.youtube.com"
-            >
-              <YoutubeLogo size={22} color="#ebe5f9" weight="duotone" />
-            </Link>
-            <Link
-              className={contactLink}
-              target="_blank"
-              href="https://www.instagram.com/"
-            >
-              <InstagramLogo size={22} color="#ebe5f9" weight="duotone" />
-            </Link>
-          </div>
-        </div>
+        <span className="text-xs uppercase text-base-title">
+          Copyright© 1995-2024 Coffee Delivery. Todos os direitos reservados.
+        </span>
       </div>
-      <span className="px-40 py-8 text-xs uppercase text-base-title">
-        Copyright© 1995-2024 Coffee Delivery. Todos os direitos reservados.{" "}
-      </span>
-      <div className="flex flex-col px-40 py-8 text-white bg-base-label">
+
+      <div className="flex flex-col px-20 py-8 text-white bg-base-label">
         <div className="flex justify-between mb-4">
-          <ul className="flex gap-5">
+          <ul className="flex gap-5 font-bold leading-snug uppercase">
             <li>
-              <Link className="font-bold leading-snug uppercase" href="">
-                Acessibilidade
-              </Link>
+              <Link href="">Acessibilidade</Link>
             </li>
             <li>
-              <Link className="font-bold leading-snug uppercase" href="">
-                Termos & Condições Loja Online
-              </Link>
+              <Link href="">Termos & Condições Loja Online</Link>
             </li>
             <li>
-              <Link className="font-bold leading-snug uppercase" href="">
-                Privacidade
-              </Link>
+              <Link href="">Privacidade</Link>
             </li>
             <li>
-              <Link className="font-bold leading-snug uppercase" href="">
-                Legal
-              </Link>
+              <Link href="">Legal</Link>
             </li>
           </ul>
 
@@ -140,7 +126,7 @@ export default function Footer() {
           </button>
         </div>
         <p className="text-sm leading-snug">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </p>
         <p className="text-sm leading-snug">
           Distinctio ut sapiente dolores aspernatur laborum tempora asperiores
