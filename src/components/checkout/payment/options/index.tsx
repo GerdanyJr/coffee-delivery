@@ -27,7 +27,7 @@ export default function Options({
   onClick: (id: string) => void;
 }) {
   return (
-    <div className="flex gap-4 mt-4">
+    <div className="flex flex-col justify-between gap-1 mt-4 lg:mt-8 lg:flex-row">
       {items.map((item) => (
         <Option
           key={item.id}

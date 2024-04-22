@@ -1,6 +1,7 @@
-"use client";
 import Link from "next/link";
+import brazilFlag from "@/../public/assets/img/BrazilFlag.png";
 import {
+  YoutubeLogo,
   CaretRight,
   ChatCircle,
   EnvelopeSimple,
@@ -9,6 +10,7 @@ import {
   Monitor,
   Phone,
   TwitterLogo,
+
   YoutubeLogo,
 } from "@phosphor-icons/react";
 import brazilFlag from "../../../../public/assets/svg/BrazilFlag.png";
@@ -123,8 +125,13 @@ export default function Footer() {
               <InstagramLogo size={22} className='text-white dark:text-purple' weight="duotone" />
             </Link>
           </div>
+
         </div>
+        <span className="text-xs uppercase text-base-title">
+          Copyright© 1995-2024 Coffee Delivery. Todos os direitos reservados.
+        </span>
       </div>
+
       <span className="px-40 py-8 text-xs uppercase text-base-title dark:text-gray-200">
         Copyright© 1995-2024 Coffee Delivery. Todos os direitos reservados.{" "}
       </span>
@@ -144,6 +151,7 @@ export default function Footer() {
               Legal
             </Link>
           </nav>
+
           <button className="flex items-center h-5 gap-2 font-bold uppercase cursor-pointer font-roboto">
             <img
               className="h-6"
@@ -153,9 +161,9 @@ export default function Footer() {
             <span>Brasil/Português</span>
             <CaretRight size={16} weight="fill" color="#fff" />
           </button>
-        </header>
+        </div>
         <p className="text-sm leading-snug">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </p>
         <p className="text-sm leading-snug">
           Distinctio ut sapiente dolores aspernatur laborum tempora asperiores
@@ -167,6 +175,6 @@ export default function Footer() {
           natus omnis? Corrupti ut minima vitae!
         </p>
       </div>
-    </div>
+    </footer>
   );
 }
