@@ -1,8 +1,8 @@
 "use client";
-import AliceCarousel from "react-alice-carousel"
-import 'react-alice-carousel/lib/alice-carousel.css';
+import AliceCarousel from "react-alice-carousel";
+import "react-alice-carousel/lib/alice-carousel.css";
 import image from "../../../../public/assets/img/Illustration.png";
-import { items } from "./cardInfo";
+import { itemsMobile, items } from "./cardInfo";
 const borderRounded =
   "rounded-tr-[36px] rounded-bl-[36px] rounded-tl-[6px] rounded-br-[6px]";
 export function OrderInfo() {
@@ -18,24 +18,22 @@ export function OrderInfo() {
       </div>
       <div className="flex flex-col lg:flex-row lg:justify-between">
         <div
-          className={`hidden lg:block min-w-[400px] max-w-[500px] mt-10 w-2/3  h-fit p-[1px] bg-gradient-to-br to-purple from-yellow ${borderRounded}`}
+          className={`hidden lg:block min-w-[430px] max-w-[500px] mt-10 w-2/3  h-fit p-[1px] bg-gradient-to-br to-purple from-yellow ${borderRounded}`}
         >
           <div
-            className={`hidden lg:flex flex-col gap-8 p-10 bg-white ${borderRounded}`}
+            className={`flex flex-col gap-8 p-10 bg-white ${borderRounded} `}
           >
-            {items.map((item) => {
-              return <div>{item}</div>;
-            })}
+            {items.map((item) => (
+              <div>{item}</div>
+            ))}
           </div>
         </div>
-        <div
-          className={`block lg:hidden w-[400px] mt-10  ${borderRounded} h-fit p-[1px] bg-gradient-to-br to-purple from-yellow`}
-        >
-          <div
-            className={`flex lg:hidden flex-col gap-8 p-10 bg-white ${borderRounded}`}
-          >
-            <AliceCarousel mouseTracking items={items} disableButtonsControls />
-          </div>
+        <div className={`block lg:hidden w-[400px]`}>
+          <AliceCarousel
+            mouseTracking
+            items={itemsMobile}
+            disableButtonsControls
+          />
         </div>
         <img
           src={image.src}
