@@ -1,5 +1,5 @@
+"use client";
 import Link from "next/link";
-import brazilFlag from "@/../public/assets/img/BrazilFlag.png";
 import {
   YoutubeLogo,
   CaretRight,
@@ -10,13 +10,12 @@ import {
   Monitor,
   Phone,
   TwitterLogo,
-
-  YoutubeLogo,
 } from "@phosphor-icons/react";
-import brazilFlag from "../../../../public/assets/svg/BrazilFlag.png";
+import brazilFlag from "../../../../public/assets/img/BrazilFlag.png";
 export default function Footer() {
   const containers = "flex flex-col gap-2 py-2";
-  const containersTitle = "text-sm font-bold uppercase text-base-title mb-1 dark:text-white";
+  const containersTitle =
+    "text-sm font-bold uppercase text-base-title mb-1 dark:text-white";
   const containersLink = " text-base-text text-sm dark:text-gray-400";
   const contactLink =
     "flex items-center justify-center h-8 w-8 bg-purple-dark rounded-full dark:bg-purple-light";
@@ -69,27 +68,51 @@ export default function Footer() {
         <div className={containers}>
           <h3 className={containersTitle}>Precisa de suporte?</h3>
           <Link className="flex items-center gap-1 dark:text-gray-200" href="">
-            <ChatCircle size={16} weight="duotone" className='text-purple dark:text-purple-light' />
+            <ChatCircle
+              size={16}
+              weight="duotone"
+              className="text-purple dark:text-purple-light"
+            />
             Chat Online
           </Link>
           <Link className="flex items-center gap-1 dark:text-gray-200" href="">
-            <EnvelopeSimple size={16} weight="duotone" className='text-purple dark:text-purple-light' />
+            <EnvelopeSimple
+              size={16}
+              weight="duotone"
+              className="text-purple dark:text-purple-light"
+            />
             E-mail
           </Link>
           <Link className="flex items-center gap-1 dark:text-gray-200" href="">
-            <Phone size={16} weight="duotone" className='text-purple dark:text-purple-light' />
+            <Phone
+              size={16}
+              weight="duotone"
+              className="text-purple dark:text-purple-light"
+            />
             Fale conosco
           </Link>
           <Link className="flex items-center gap-1 dark:text-gray-200" href="">
-            <Monitor size={16} weight="duotone" className='text-purple dark:text-purple-light' />
+            <Monitor
+              size={16}
+              weight="duotone"
+              className="text-purple dark:text-purple-light"
+            />
             Assistência Online
           </Link>
           <Link className="flex items-center gap-1 dark:text-gray-200" href="">
-            <Monitor size={16} weight="duotone" className='text-purple dark:text-purple-light' />
+            <Monitor
+              size={16}
+              weight="duotone"
+              className="text-purple dark:text-purple-light"
+            />
             Coffee Delivery Care
           </Link>
           <Link className="flex items-center gap-1 dark:text-gray-200" href="">
-            <Monitor size={16} weight="duotone" className='text-purple dark:text-purple-light' />
+            <Monitor
+              size={16}
+              weight="duotone"
+              className="text-purple dark:text-purple-light"
+            />
             Coffee Delivery Concierge
           </Link>
         </div>
@@ -101,35 +124,47 @@ export default function Footer() {
               target="_blank"
               href="https://www.facebook.com"
             >
-              <FacebookLogo size={22} className='text-white dark:text-purple' weight="duotone" />
+              <FacebookLogo
+                size={22}
+                className="text-white dark:text-purple"
+                weight="duotone"
+              />
             </Link>
             <Link
               className={contactLink}
               target="_blank"
               href="https://twitter.com"
             >
-              <TwitterLogo size={22}  className='text-white dark:text-purple' weight="duotone" />
+              <TwitterLogo
+                size={22}
+                className="text-white dark:text-purple"
+                weight="duotone"
+              />
             </Link>
             <Link
               className={contactLink}
               target="_blank"
               href="https://www.youtube.com"
             >
-              <YoutubeLogo size={22} className='text-white dark:text-purple' weight="duotone" />
+              <YoutubeLogo
+                size={22}
+                className="text-white dark:text-purple"
+                weight="duotone"
+              />
             </Link>
             <Link
               className={contactLink}
               target="_blank"
               href="https://www.instagram.com/"
             >
-              <InstagramLogo size={22} className='text-white dark:text-purple' weight="duotone" />
+              <InstagramLogo
+                size={22}
+                className="text-white dark:text-purple"
+                weight="duotone"
+              />
             </Link>
           </div>
-
         </div>
-        <span className="text-xs uppercase text-base-title">
-          Copyright© 1995-2024 Coffee Delivery. Todos os direitos reservados.
-        </span>
       </div>
 
       <span className="px-40 py-8 text-xs uppercase text-base-title dark:text-gray-200">
@@ -151,7 +186,10 @@ export default function Footer() {
               Legal
             </Link>
           </nav>
-
+        </header>
+      </div>
+      <footer>
+        <div>
           <button className="flex items-center h-5 gap-2 font-bold uppercase cursor-pointer font-roboto">
             <img
               className="h-6"
@@ -161,20 +199,21 @@ export default function Footer() {
             <span>Brasil/Português</span>
             <CaretRight size={16} weight="fill" color="#fff" />
           </button>
+
+          <p className="text-sm leading-snug">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </p>
+          <p className="text-sm leading-snug">
+            Distinctio ut sapiente dolores aspernatur laborum tempora asperiores
+            soluta deserunt obcaecati aperiam quidem aliquam omnis, autem
+            repellat accusamus, cum, laboriosam impedit ratione?
+          </p>
+          <p className="text-sm leading-snug">
+            Tempore illum dolores ullam nihil neque consequatur culpa possimus
+            natus omnis? Corrupti ut minima vitae!
+          </p>
         </div>
-        <p className="text-sm leading-snug">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </p>
-        <p className="text-sm leading-snug">
-          Distinctio ut sapiente dolores aspernatur laborum tempora asperiores
-          soluta deserunt obcaecati aperiam quidem aliquam omnis, autem repellat
-          accusamus, cum, laboriosam impedit ratione?
-        </p>
-        <p className="text-sm leading-snug">
-          Tempore illum dolores ullam nihil neque consequatur culpa possimus
-          natus omnis? Corrupti ut minima vitae!
-        </p>
-      </div>
-    </footer>
+      </footer>
+    </div>
   );
 }

@@ -11,7 +11,7 @@ export default function Banner() {
   return (
     <div className="flex flex-col mt-8 text-center lg:text-start lg:flex-row lg:mt-24 lg:items-center">
       <BannerImage />
-      <div>
+      <div className='mx-24 md:mx-0'>
         <div>
           <h2 className="mb-4 text-5xl font-bold font-baloo md:text-6xl dark:text-purple-light">
             Encontre o café perfeito para qualquer hora do dia

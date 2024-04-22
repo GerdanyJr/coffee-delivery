@@ -1,6 +1,6 @@
+import Footer from '@/components/home/footer';
 import { Header } from "@/components/home/header";
 import type { Metadata } from "next";
-import { Footer } from "@/components/home/footer";
 export const metadata: Metadata = {
   title: "Coffee Delivery",
 };
