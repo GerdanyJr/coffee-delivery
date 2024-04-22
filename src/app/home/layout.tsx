@@ -11,7 +11,7 @@ export default function HomeLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="my-8">
+    <div className="pt-8">
       <Header />
       <div className="lg:mx-16 xl:mx-40">{children}</div>
       <Footer />
