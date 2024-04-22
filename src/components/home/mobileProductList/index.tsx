@@ -18,7 +18,7 @@ export function MobileProductList({ title }: { title: string }) {
           <ProductCard
             key={product.id}
             id={product.id}
-            image={`http://localhost:8080/${product.image}`}
+            image={`http://localhost:8080${product.image}`}
             categories={product.categories}
             price={product.price}
             name={product.name}
