@@ -16,7 +16,7 @@ export default function Pagination({
 }) {
   return (
     <div className="flex flex-col items-center gap-2 mt-6">
-      <div className="text-sm font-thin">
+      <div className="text-sm font-thin dark:text-white">
         Você está na página {currentPage} de {totalPages}
       </div>
       <div className="flex gap-4">
@@ -25,7 +25,7 @@ export default function Pagination({
             return currentPage > 0 && handleChangePage(1);
           }}
           disabled={currentPage === 1}
-          className={`${currentPage === 1 ? "text-base-label" : "text-black"}`}
+          className={`${currentPage === 1 ? "text-base-label dark:text-gray-400" : "text-black dark:text-white"}`}
         >
           <CaretDoubleLeft size={20} />
         </button>
@@ -34,7 +34,7 @@ export default function Pagination({
             return currentPage > 1 && handleChangePage(currentPage - 1);
           }}
           disabled={currentPage === 1}
-          className={`${currentPage === 1 ? "text-base-label" : "text-black"}`}
+          className={`${currentPage === 1 ? "text-base-label dark:text-gray-400" : "text-black dark:text-white"}`}
         >
           <CaretLeft size={20} />
         </button>
@@ -44,8 +44,8 @@ export default function Pagination({
             onClick={() => handleChangePage(index + 1)}
             className={`${
               currentPage === index + 1
-                ? "bg-black px-2 rounded-lg text-white "
-                : "bg-transparent px-1 rounded-lg text-black "
+                ? "bg-black px-2 rounded-lg text-white dark:bg-white dark:text-black"
+                : "bg-transparent px-1 rounded-lg text-black dark:text-white"
             }`}
           >
             {index + 1}
@@ -55,7 +55,7 @@ export default function Pagination({
           onClick={() => handleChangePage(currentPage + 1)}
           disabled={currentPage === totalPages}
           className={`${
-            currentPage === totalPages ? "text-base-label" : "text-black"
+            currentPage === totalPages ? "text-base-label dark:text-gray-400" : "text-black dark:text-white"
           }`}
         >
           <CaretRight size={20} />
@@ -64,7 +64,7 @@ export default function Pagination({
           onClick={() => handleChangePage(totalPages)}
           disabled={currentPage === totalPages}
           className={`${
-            currentPage === totalPages ? "text-base-label" : "text-black"
+            currentPage === totalPages ? "text-base-label dark:text-gray-400" : "text-black dark:text-white"
           }`}
         >
           <CaretDoubleRight size={20} />

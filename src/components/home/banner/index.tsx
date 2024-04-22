@@ -6,17 +6,17 @@ import { BannerItem } from "./bannerItem";
 import { BannerImage } from "./bannerImage";
 
 export default function Banner() {
-  const itemsClasses = "flex flex-col gap-4";
 
+  const itemsClasses = "flex flex-col gap-4";
   return (
     <div className="flex flex-col mt-8 text-center lg:text-start lg:flex-row lg:mt-24 lg:items-center">
       <BannerImage />
       <div>
         <div>
-          <h2 className="mb-4 text-5xl font-bold font-baloo md:text-6xl">
+          <h2 className="mb-4 text-5xl font-bold font-baloo md:text-6xl dark:text-purple-light">
             Encontre o café perfeito para qualquer hora do dia
           </h2>
-          <p className="text-xl font-semibold font-roboto text-base-subtitle lg:font-normal ">
+          <p className="text-xl font-semibold font-roboto text-base-subtitle lg:font-normal dark:text-white">
             Com o Coffee Delivery você recebe seu café onde estiver, a qualquer
             hora
           </p>

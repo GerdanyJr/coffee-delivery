@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'selector',
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -20,6 +21,7 @@ module.exports = {
           light: "#ebe5f9",
         },
         base: {
+          text_dark: "#FAFAFA",
           title: "#272221",
           subtitle: "#403937",
           text: "#574f4d",
@@ -28,7 +30,9 @@ module.exports = {
           button: "#e6e5e5",
           input: "#ededed",
           card: "#f3f2f2",
+          card_dark:"#BEB7DF",
         },
+        background_dark: "#121214",
         background: "#fafafa",
         white: "#ffffff",
       },

@@ -10,10 +10,11 @@ export function ProductList({
 }) {
   return (
     <>
-      <h2 className="mx-2 mt-16 mb-16 text-3xl font-bold text-center lg:text-start font-baloo text-base-subtitle">
-        {title}
-      </h2>
+
+
+      <h2 className="mx-2 mt-16 mb-16 text-3xl font-baloo font-bold text-center lg:text-start text-base-subtitle dark:text-purple-light">{title}</h2>
       <div className="flex flex-wrap justify-center gap-y-9 gap-x-8">
+
         {products?.map((product) => (
           <ProductCard
             key={product.id}
