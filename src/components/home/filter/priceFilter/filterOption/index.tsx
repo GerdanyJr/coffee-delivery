@@ -23,6 +23,7 @@ export function FilterOption({
         id={value}
         value={value}
         onClick={onClick}
+        readOnly
         className="cursor-pointer size-6 checked:accent-black"
       />
     </div>
