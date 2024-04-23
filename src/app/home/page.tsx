@@ -8,12 +8,15 @@ import { Pages } from "@/@types/interface/pages";
 import Pagination from "../../components/home/pagination";
 import { useWindowDimensions } from "@/hooks/useWindowDimensions";
 import { MobileProductList } from "@/components/home/mobileProductList";
+import { SearchBar } from "@/components/home/searchBar";
 
 export default function Home() {
   const { width } = useWindowDimensions();
   const [products, setProducts] = useState<Coffee[]>([]);
   const [totalPages, setTotalPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
+  const [filteredCoffees, setFilteredCoffees] = useState<Coffee[]>([]);
+  const [isFiltering, setIsFiltering] = useState(false);
   useEffect(() => {
     async function loadProducts() {
       const response = await api.get("/coffee");
@@ -36,12 +39,25 @@ export default function Home() {
       <Banner />
       {width >= 768 && (
         <>
-          <ProductList title="Nossos cafés" products={products} />
-          <Pagination
-            totalPages={totalPages}
-            handleChangePage={handleChangePage}
-            currentPage={currentPage}
+          <SearchBar
+            products={products}
+            filteredCoffees={filteredCoffees}
+            setFilteredCoffees={setFilteredCoffees}
+            setIsFiltering={setIsFiltering}
           />
+          <ProductList
+            title="Nossos cafés"
+            products={products}
+            filteredCoffees={filteredCoffees}
+            isFiltering={isFiltering}
+          />
+          {!isFiltering && (
+            <Pagination
+              totalPages={totalPages}
+              handleChangePage={handleChangePage}
+              currentPage={currentPage}
+            />
+          )}
         </>
       )}
       {width < 768 && <MobileProductList title="Nossos cafés" />}
