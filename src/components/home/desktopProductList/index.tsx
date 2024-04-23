@@ -1,40 +1,25 @@
 "use client";
-
-import { Coffee } from "@/@types/interface/coffee";
-import { Pages } from "@/@types/interface/pages";
-import api from "@/services/api";
-import { useState, useEffect } from "react";
 import { ProductList } from "../productList";
 import Pagination from "../pagination";
+import { PriceFilter } from "../filter/priceFilter";
+import { useProducts } from "@/hooks/useProducts";
 
 export function DesktopProductList() {
-  const [products, setProducts] = useState<Coffee[]>([]);
-  const [totalPages, setTotalPages] = useState(0);
-  const [currentPage, setCurrentPage] = useState(1);
-  useEffect(() => {
-    async function loadProducts() {
-      const response = await api.get("/coffee");
-      const data = (await response.data) as Pages<Coffee>;
-
-      setTotalPages(data.totalPages);
-      setProducts(data.results);
-    }
-    loadProducts();
-  }, []);
-
-  async function handleChangePage(currentPage: number) {
-    const contentPage = await api.get(`/coffee?page=${currentPage - 1}`);
-    const page = await contentPage.data;
-    setProducts(page.results);
-    setCurrentPage(currentPage);
-  }
+  const { filter, handleChangePage, page, products, setFilter, totalPages } =
+    useProducts();
   return (
     <>
+      <div className="flex items-center justify-end">
+        <PriceFilter filter={filter} setFilter={setFilter} />
+      </div>
+      <h2 className="mx-2 mb-16 text-3xl font-bold text-start font-baloo text-base-subtitle">
+        Nossos cafés
+      </h2>
       <ProductList products={products} />
       <Pagination
         totalPages={totalPages}
         handleChangePage={handleChangePage}
-        currentPage={currentPage}
+        currentPage={page}
       />
     </>
   );

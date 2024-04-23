@@ -1,61 +1,77 @@
 "use client";
 import { CaretDown } from "@phosphor-icons/react/dist/ssr";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { FilterOption } from "./filterOption";
 
-export function PriceFilter() {
-  const [pressed, setPressed] = useState(false);
-  const [selected, setSelected] = useState("");
+export interface Filter {
+  sort: string | undefined;
+  direction: "asc" | "desc" | undefined;
+  min: number | undefined;
+  max: number | undefined;
+}
+const defaultFilter: Filter = {
+  direction: undefined,
+  max: undefined,
+  min: undefined,
+  sort: undefined,
+};
 
-  function handleClick(e: React.MouseEvent<HTMLInputElement, MouseEvent>) {
-    const value = e.currentTarget.value;
-    setSelected((prev) => (prev == value ? "" : value));
-  }
+export function PriceFilter({
+  filter,
+  setFilter,
+  className,
+}: {
+  filter: Filter | undefined;
+  setFilter: Dispatch<SetStateAction<Filter | undefined>>;
+  className?: string;
+}) {
+  const [pressed, setPressed] = useState(false);
 
   return (
-    <div className="relative font-roboto">
+    <div className={`relative font-roboto ${className}`}>
       <button
         className="flex items-center gap-1 text-lg"
         onClick={() => setPressed((prev) => !prev)}
       >
-        Preço <CaretDown size={24} className={pressed ? "rotate-180" : ""} />
+        Preço
+        <CaretDown size={24} className={pressed ? "rotate-180" : ""} />
       </button>
       {pressed && (
         <div className="absolute flex flex-col items-start gap-3 p-4 mt-1 bg-white rounded-lg shadow-2xl w-max -left-36">
-          {selected && (
-            <button onClick={() => setSelected("")} className="underline">
-              limpar filtros
+          {filter && (
+            <button onClick={() => setFilter(undefined)} className="underline">
+              Limpar Filtros
             </button>
           )}
           <FilterOption
             label="Maior Preço"
-            value="decrescent"
-            checked={selected == "decrescent"}
-            onClick={handleClick}
+            value="desc"
+            checked={filter?.direction === "desc"}
+            onClick={() => setFilter({ ...defaultFilter, direction: "desc" })}
           />
           <FilterOption
             label="Menor Preço"
-            value="crescent"
-            checked={selected == "crescent"}
-            onClick={handleClick}
+            value="asc"
+            checked={filter?.direction === "asc"}
+            onClick={() => setFilter({ ...defaultFilter, direction: "asc" })}
           />
           <FilterOption
-            label="de R$9,00 até R$20,00"
+            label="De R$9,00 até R$20,00"
             value="9-20"
-            checked={selected == "9-20"}
-            onClick={handleClick}
+            checked={filter?.max === 20}
+            onClick={() => setFilter({ ...defaultFilter, min: 9, max: 20 })}
           />
           <FilterOption
-            label="de R$20,00 até R$40,00"
+            label="De R$20,00 até R$40,00"
             value="20-40"
-            checked={selected == "20-40"}
-            onClick={handleClick}
+            checked={filter?.max === 40}
+            onClick={() => setFilter({ ...defaultFilter, min: 20, max: 40 })}
           />
           <FilterOption
             label="Maior que R$60,00"
             value="60"
-            checked={selected == "60"}
-            onClick={handleClick}
+            checked={filter?.min === 60}
+            onClick={() => setFilter({ ...defaultFilter, min: 60 })}
           />
         </div>
       )}
