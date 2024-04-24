@@ -34,29 +34,33 @@ export default function Home() {
     setProducts(page.results);
     setCurrentPage(currentPage);
   }
+
   return (
     <>
       <Banner />
       {width >= 768 && (
         <>
           <SearchBar
-            products={products}
             filteredCoffees={filteredCoffees}
             setFilteredCoffees={setFilteredCoffees}
             setIsFiltering={setIsFiltering}
-          />
-          <ProductList
-            title="Nossos cafés"
-            products={products}
-            filteredCoffees={filteredCoffees}
             isFiltering={isFiltering}
           />
           {!isFiltering && (
-            <Pagination
-              totalPages={totalPages}
-              handleChangePage={handleChangePage}
-              currentPage={currentPage}
-            />
+            <>
+              <ProductList
+                title="Nossos cafés"
+                products={products}
+                filteredCoffees={filteredCoffees}
+                isFiltering={isFiltering}
+              />
+
+              <Pagination
+                totalPages={totalPages}
+                handleChangePage={handleChangePage}
+                currentPage={currentPage}
+              />
+            </>
           )}
         </>
       )}
