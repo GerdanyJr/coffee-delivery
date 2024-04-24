@@ -27,7 +27,7 @@ export function useProducts() {
 
       setProducts(page.results);
       setTotalPages(page.totalPages);
-      setPage(1);
+      setPage(page.pageNumber + 1 > page.totalPages ? 1 : page.pageNumber + 1);
     },
     [page, filter?.direction, filter?.max, filter?.min, filter?.sort]
   );
