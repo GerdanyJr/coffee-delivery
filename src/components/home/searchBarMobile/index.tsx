@@ -1,29 +1,24 @@
 import { Coffee } from "@/@types/interface/coffee";
 import { MagnifyingGlass, X } from "@phosphor-icons/react";
 import { ChangeEvent, useState } from "react";
-import Pagination from "../pagination";
-import { ProductList } from "../productList";
+import { MobileProductList } from "../mobileProductList";
 
-export function SearchBar({
-  filteredCoffees,
+export function SearchBarMobile({
+  allFilteredCoffeesMobile,
+  setAllFilteredCoffeesMobile,
   setFilteredCoffees,
   setIsFiltering,
   isFiltering,
-  setAllFilteredCoffeesMobile,
   setCurrentPage,
   setTotalPages,
-  currentPage,
-  totalPages,
 }: {
-  filteredCoffees: Coffee[];
+  allFilteredCoffeesMobile: Coffee[];
+  setAllFilteredCoffeesMobile: React.Dispatch<React.SetStateAction<Coffee[]>>;
   setFilteredCoffees: React.Dispatch<React.SetStateAction<Coffee[]>>;
   setIsFiltering: React.Dispatch<React.SetStateAction<boolean>>;
   isFiltering: boolean;
-  setAllFilteredCoffeesMobile: React.Dispatch<React.SetStateAction<Coffee[]>>;
   setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
   setTotalPages: React.Dispatch<React.SetStateAction<number>>;
-  currentPage: number;
-  totalPages: number;
 }) {
   const [coffeeName, setCoffeeName] = useState<string>("");
   const [empty, setEmpty] = useState<Boolean>(true);
@@ -33,24 +28,8 @@ export function SearchBar({
       `http://localhost:8080/coffee/name?name=${valor}`
     );
     const data = await response.json();
-    setFilteredCoffees(data.results);
-    setTotalPages(data.totalPages);
-    setCurrentPage(data.pageNumber + 1);
-    createMobileList(data.totalPages);
-  }
-  async function handleChangePage(currentPage: number) {
-    const contentPage = await fetch(
-      `http://localhost:8080/coffee/name?name=${coffeeName}&page=${
-        currentPage - 1
-      }`
-    );
-    const page = await contentPage.json();
-    setFilteredCoffees(page.results);
-    setCurrentPage(currentPage);
-  }
-  async function createMobileList(totalPages: number) {
     let allCoffeesFiltered: Coffee[] = [];
-    for (var i = 0; i < totalPages; i++) {
+    for (var i = 0; i < data.totalPages; i++) {
       const _response = await fetch(
         `http://localhost:8080/coffee/name?name=${coffeeName}&page=${i}`
       );
@@ -59,11 +38,23 @@ export function SearchBar({
         allCoffeesFiltered.push(_data.results[j]);
       }
     }
+    setFilteredCoffees(allCoffeesFiltered);
     setAllFilteredCoffeesMobile(allCoffeesFiltered);
+    createDesktopList(valor);
+  }
+  async function createDesktopList(valor: string) {
+    const response = await fetch(
+      `http://localhost:8080/coffee/name?name=${valor}`
+    );
+    const data = await response.json();
+    setFilteredCoffees(data.results);
+    setTotalPages(data.totalPages);
+    setCurrentPage(data.pageNumber + 1);
+    
   }
   function handleChangeInput(e: ChangeEvent<HTMLInputElement>) {
     const value = e.target.value;
-    e.target.value == "" ? setEmpty(true) : setEmpty(false);
+    setEmpty(e.target.value == "");
     setCoffeeName(value);
   }
   function handleEraseInputValue() {
@@ -75,7 +66,6 @@ export function SearchBar({
   function handleSearchProductNameOnApi(
     e: React.KeyboardEvent<HTMLInputElement>
   ) {
-    var vetor: Coffee[] = [];
     if (e.key === "Enter") {
       loadFilteredProducts(coffeeName);
       setIsFiltering(true);
@@ -83,7 +73,7 @@ export function SearchBar({
   }
   return (
     <>
-      <div className="flex justify-around lg:justify-normal">
+      <div className="flex justify-center">
         <div className="relative flex max-w-max">
           <label htmlFor="searchbar" className="sr-only">
             Buscar produtos
@@ -127,16 +117,9 @@ export function SearchBar({
       </div>
       {isFiltering && (
         <>
-          <ProductList
-            title={"Cafés filtrados"}
-            products={filteredCoffees}
-            filteredCoffees={filteredCoffees}
-            isFiltering={true}
-          />
-          <Pagination
-            totalPages={totalPages}
-            handleChangePage={handleChangePage}
-            currentPage={currentPage}
+          <MobileProductList
+            title="Nossos cafés"
+            allCoffeesFiltered={allFilteredCoffeesMobile}
           />
         </>
       )}

@@ -14,8 +14,6 @@ export default function Pagination({
   handleChangePage: (page: number) => void;
   currentPage: number;
 }) {
-  console.log(typeof totalPages);
-  console.log(typeof 1);
 
   return (
     <>
