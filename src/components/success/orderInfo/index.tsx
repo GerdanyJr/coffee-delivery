@@ -7,7 +7,7 @@ const borderRounded =
   "rounded-tr-[36px] rounded-bl-[36px] rounded-tl-[6px] rounded-br-[6px]";
 export function OrderInfo() {
   return (
-    <>
+    <div className='flex flex-col items-center lg:block '>
       <div className="mt-20">
         <h1 className="text-yellow-dark font-baloo text-[32px] font-semibold leading-snug">
           Uhu! Pedido confirmado
@@ -41,6 +41,6 @@ export function OrderInfo() {
           alt="Homem usando uma motocicleta para entregar um pedido"
         />
       </div>
-    </>
+    </div>
   );
 }
