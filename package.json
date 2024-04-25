@@ -12,6 +12,7 @@
     "test:coverage": "jest --coverage"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.3.4",
     "@phosphor-icons/react": "^2.1.4",
     "@tanstack/react-query": "^5.28.9",
     "axios": "^1.6.8",
