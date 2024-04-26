@@ -2,24 +2,16 @@
 import { ProductList } from "../productList";
 import Pagination from "../pagination";
 import { PriceFilter } from "../filter/priceFilter";
-import { FilterType, useProducts } from "@/hooks/useProducts";
-import { useEffect, useState } from "react";
-import { Category } from "@/@types/interface/coffee";
+import { FilterType, useFilter } from "@/hooks/useFilter";
+import { useState } from "react";
+import { Coffee } from "@/@types/interface/coffee";
 import { TagFilter } from "../filter/tagFilter";
 
 export function DesktopProductList() {
   const [openedFilter, setOpenedFilter] = useState<FilterType>();
-  const [tags, setTags] = useState<Category[]>([]);
-  const { filter, handleChangePage, page, products, setFilter, totalPages } =
-    useProducts();
-  useEffect(() => {
-    async function getTags() {
-      const response = await fetch("http://localhost:8080/category");
-      const data = (await response.json()) as Category[];
-      setTags(data);
-    }
-    getTags();
-  }, []);
+  const [products, setProducts] = useState<Coffee[]>([]);
+  const { filter, tags, page, totalPages, handleChangePage, setFilter } =
+    useFilter(setProducts);
 
   function onFilterPress(filter: FilterType) {
     setOpenedFilter((prev) => (prev === filter ? undefined : filter));
