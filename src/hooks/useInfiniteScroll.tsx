@@ -1,21 +1,28 @@
 "use client";
 
 import { useInView } from "react-intersection-observer";
-import { useRef, useState, useCallback, useEffect } from "react";
+import {
+  useRef,
+  useState,
+  useCallback,
+  useEffect,
+  SetStateAction,
+  Dispatch,
+} from "react";
 import { Pages } from "@/@types/interface/pages";
-import { Filter } from "@/components/home/filter/priceFilter";
+import { Filter } from "./useFilter";
 
 export function useInfiniteScroll<T>(
-  fetchFn: (page: number, filter: Filter | undefined) => Promise<Pages<T>>
+  setData: Dispatch<SetStateAction<T[]>>,
+  filter: Filter,
+  fetchFn: (page: number, filter: Filter) => Promise<Pages<T>>
 ) {
-  const [filter, setFilter] = useState<Filter | undefined>();
   const [isFetching, setIsFetching] = useState(false);
   const [hasMore, setHasMore] = useState(true);
-  const [data, setData] = useState<T[]>([]);
   const [ref, inView] = useInView();
   const page = useRef(0);
 
-  const getCoffees = useCallback(
+  const getData = useCallback(
     async (filterChanged: boolean) => {
       setIsFetching(true);
       const data = await fetchFn(page.current, filter);
@@ -32,18 +39,18 @@ export function useInfiniteScroll<T>(
 
   useEffect(() => {
     if ((inView && !isFetching && hasMore) || page.current == 0) {
-      getCoffees(false);
+      getData(false);
       page.current = page.current + 1;
     }
-  }, [getCoffees, inView, hasMore]);
-  
+  }, [getData, inView, hasMore]);
+
   useEffect(() => {
     if (!isFetching) {
       page.current = 0;
-      getCoffees(true);
+      getData(true);
       page.current = page.current + 1;
     }
   }, [filter]);
 
-  return { data, isFetching, filter, ref, setFilter };
+  return { isFetching, filter, ref };
 }
