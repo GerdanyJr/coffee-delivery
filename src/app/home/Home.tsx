@@ -9,6 +9,7 @@ import Pagination from "../../components/home/pagination";
 import { useWindowDimensions } from "@/hooks/useWindowDimensions";
 import { MobileProductList } from "@/components/home/mobileProductList";
 import { SearchBar } from "@/components/home/searchBar";
+import { SearchBarMobile } from "@/components/home/searchBarMobile";
 
 export default function Home() {
   const { width } = useWindowDimensions();
@@ -17,6 +18,9 @@ export default function Home() {
   const [currentPage, setCurrentPage] = useState(1);
   const [filteredCoffees, setFilteredCoffees] = useState<Coffee[]>([]);
   const [isFiltering, setIsFiltering] = useState(false);
+  const [allFilteredCoffeesMobile, setAllFilteredCoffeesMobile] = useState<
+  Coffee[]
+>([]);
   useEffect(() => {
     async function loadProducts() {
       const response = await api.get("/coffee");
@@ -41,10 +45,15 @@ export default function Home() {
       {width >= 768 && (
         <>
           <SearchBar
+            setTotalPages={setTotalPages}
+            setCurrentPage={setCurrentPage}
             filteredCoffees={filteredCoffees}
             setFilteredCoffees={setFilteredCoffees}
             setIsFiltering={setIsFiltering}
             isFiltering={isFiltering}
+            setAllFilteredCoffeesMobile={setAllFilteredCoffeesMobile}
+            totalPages={totalPages}
+            currentPage={currentPage}
           />
           {!isFiltering && (
             <>
@@ -67,10 +76,13 @@ export default function Home() {
       {width < 768 && (
         <>
           <SearchBarMobile
-            filteredCoffees={filteredCoffees}
-            setFilteredCoffees={setFilteredCoffees}
-            setIsFiltering={setIsFiltering}
-            isFiltering={isFiltering}
+             setFilteredCoffees={setFilteredCoffees}
+             setIsFiltering={setIsFiltering}
+             isFiltering={isFiltering}
+             setAllFilteredCoffeesMobile={setAllFilteredCoffeesMobile}
+             allFilteredCoffeesMobile={allFilteredCoffeesMobile}
+             setTotalPages={setTotalPages}
+             setCurrentPage={setCurrentPage}
           />
           {!isFiltering && <MobileProductList title="Nossos cafés" />}
         </>
