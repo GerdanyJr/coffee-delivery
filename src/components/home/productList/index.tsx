@@ -1,7 +1,7 @@
-"use client";
+
 import { Coffee } from "@/@types/interface/coffee";
 import { ProductCard } from "../../UI/productCard";
-import { useEffect, useState } from "react";
+import Link from 'next/link';
 
 export function ProductList({
   title,
@@ -23,6 +23,7 @@ export function ProductList({
       {isFiltering ? (
         <div className="flex flex-wrap justify-center gap-y-9 gap-x-8">
           {filteredCoffees?.map((filteredCoffee) => (
+            <Link href={`/home/product/${filteredCoffee.id}`} key={filteredCoffee.id}>
             <ProductCard
               key={filteredCoffee.id}
               id={filteredCoffee.id}
@@ -32,13 +33,14 @@ export function ProductList({
               name={filteredCoffee.name}
               description={filteredCoffee.description}
             />
+            </Link>
           ))}
         </div>
       ) : (
         <div className="flex flex-wrap justify-center gap-y-9 gap-x-8">
           {products?.map((product) => (
+            <Link href={`/home/product/${product.id}`} key={product.id}>
             <ProductCard
-              key={product.id}
               id={product.id}
               image={`http://localhost:8080${product.image}`}
               categories={product.categories}
@@ -46,6 +48,7 @@ export function ProductList({
               name={product.name}
               description={product.description}
             />
+          </Link>
           ))}
         </div>
       )}
