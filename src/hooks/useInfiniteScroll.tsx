@@ -3,12 +3,12 @@
 import { useInView } from "react-intersection-observer";
 import { useRef, useState, useCallback, useEffect } from "react";
 import { Pages } from "@/@types/interface/pages";
-import { Filter } from "@/components/home/filter/priceFilter";
+import { Filter, defaultFilter } from "./useProducts";
 
 export function useInfiniteScroll<T>(
-  fetchFn: (page: number, filter: Filter | undefined) => Promise<Pages<T>>
+  fetchFn: (page: number, filter: Filter) => Promise<Pages<T>>
 ) {
-  const [filter, setFilter] = useState<Filter | undefined>();
+  const [filter, setFilter] = useState<Filter>(defaultFilter);
   const [isFetching, setIsFetching] = useState(false);
   const [hasMore, setHasMore] = useState(true);
   const [data, setData] = useState<T[]>([]);
@@ -36,7 +36,7 @@ export function useInfiniteScroll<T>(
       page.current = page.current + 1;
     }
   }, [getCoffees, inView, hasMore]);
-  
+
   useEffect(() => {
     if (!isFetching) {
       page.current = 0;
