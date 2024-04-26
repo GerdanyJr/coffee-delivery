@@ -8,7 +8,7 @@ import DarkMode from "../darkMode";
 
 export function Header() {
   return (
-    <header className="flex justify-between mx-4 lg:mx-16 xl:mx-40">
+    <header className="flex justify-between mx-4 my-4 lg:mx-16 xl:mx-40">
       <Link href="/home">
         <div className='hidden dark:flex'>
           <CoffeeDeliveryLogoDark/>

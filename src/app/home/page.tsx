@@ -17,6 +17,7 @@ export default function Home() {
   function onFilterPress(filter: FilterType) {
     setOpenedFilter((prev) => (prev === filter ? undefined : filter));
   }
+
   return (
     <>
       <Banner />

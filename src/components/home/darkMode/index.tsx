@@ -1,15 +1,15 @@
 "use client";
 import { Sun, Moon } from "@phosphor-icons/react/dist/ssr";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function DarkMode() {
-  const systemPreferences = window.matchMedia("(prefers-color-scheme:dark)");
-  const pageMode = document.documentElement.classList;
+  const [systemPreferences, setSystemPreferences] = useState<MediaQueryList>();
   useEffect(() => {
-    pageMode.add("dark");
+    setSystemPreferences(window.matchMedia("(prefers-color-scheme:dark)"));
+    document.documentElement.classList.add("dark");
   }, []);
   const toggle = () => {
-    systemPreferences && pageMode.toggle("dark");
+    systemPreferences && document.documentElement.classList.toggle("dark");
   };
   return (
     <button
