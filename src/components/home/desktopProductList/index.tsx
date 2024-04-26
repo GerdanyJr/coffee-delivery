@@ -2,28 +2,33 @@
 import { ProductList } from "../productList";
 import Pagination from "../pagination";
 import { PriceFilter } from "../filter/priceFilter";
-import { FilterType, useProducts } from "@/hooks/useProducts";
-import { useEffect, useState } from "react";
-import { Category } from "@/@types/interface/coffee";
+import { Filter, FilterType } from "@/hooks/useFilter";
+import { Dispatch, SetStateAction } from "react";
+import { Category, Coffee } from "@/@types/interface/coffee";
 import { TagFilter } from "../filter/tagFilter";
 
-export function DesktopProductList() {
-  const [openedFilter, setOpenedFilter] = useState<FilterType>();
-  const [tags, setTags] = useState<Category[]>([]);
-  const { filter, handleChangePage, page, products, setFilter, totalPages } =
-    useProducts();
-  useEffect(() => {
-    async function getTags() {
-      const response = await fetch("http://localhost:8080/category");
-      const data = (await response.json()) as Category[];
-      setTags(data);
-    }
-    getTags();
-  }, []);
-
-  function onFilterPress(filter: FilterType) {
-    setOpenedFilter((prev) => (prev === filter ? undefined : filter));
-  }
+interface DestopProductListProps {
+  openedFilter: FilterType;
+  data: Coffee[];
+  filter: Filter;
+  tags: Category[];
+  page: number;
+  totalPages: number;
+  handleChangePage: (page: number) => void;
+  setFilter: Dispatch<SetStateAction<Filter>>;
+  onFilterPress: (filter: FilterType) => void;
+}
+export function DesktopProductList({
+  tags,
+  data,
+  page,
+  totalPages,
+  filter,
+  openedFilter,
+  setFilter,
+  handleChangePage,
+  onFilterPress,
+}: DestopProductListProps) {
   return (
     <>
       <div className="flex justify-end gap-2">
@@ -44,7 +49,7 @@ export function DesktopProductList() {
       <h2 className="mx-2 mb-16 text-3xl font-bold text-start font-baloo text-base-subtitle">
         Nossos cafés
       </h2>
-      <ProductList products={products} />
+      <ProductList products={data} />
       <Pagination
         totalPages={totalPages}
         handleChangePage={handleChangePage}

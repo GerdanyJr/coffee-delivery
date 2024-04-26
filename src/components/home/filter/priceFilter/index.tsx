@@ -1,8 +1,7 @@
-"use client";
 import { CaretDown } from "@phosphor-icons/react/dist/ssr";
 import { Dispatch, SetStateAction } from "react";
 import { FilterOption } from "../filterOption";
-import { Filter, defaultFilter } from "@/hooks/useProducts";
+import { Filter, defaultFilter } from "@/hooks/useFilter";
 
 export function PriceFilter({
   open,

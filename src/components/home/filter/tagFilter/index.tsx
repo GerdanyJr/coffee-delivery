@@ -1,9 +1,8 @@
-"use client";
 import { CaretDown } from "@phosphor-icons/react/dist/ssr";
 import { Dispatch, SetStateAction } from "react";
 import { FilterOption } from "../filterOption";
 import { Category } from "@/@types/interface/coffee";
-import { Filter } from "@/hooks/useProducts";
+import { Filter } from "@/hooks/useFilter";
 
 export function TagFilter({
   tags,

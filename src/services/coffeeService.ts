@@ -1,4 +1,4 @@
-import { Filter } from "@/hooks/useProducts";
+import { Filter } from "@/hooks/useFilter";
 import api from "./api";
 import { Coffee } from "@/@types/interface/coffee";
 import { Pages } from "@/@types/interface/pages";
