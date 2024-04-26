@@ -22,7 +22,7 @@ export default function Pagination({
       <div className="flex gap-4">
         <button
           onClick={() => {
-            return currentPage > 0 && handleChangePage(1);
+            return currentPage > 0 && handleChangePage(0);
           }}
           disabled={currentPage === 1}
           className={`${currentPage === 1 ? "text-base-label dark:text-gray-400" : "text-black dark:text-white"}`}
@@ -31,7 +31,7 @@ export default function Pagination({
         </button>
         <button
           onClick={() => {
-            return currentPage > 1 && handleChangePage(currentPage - 1);
+            return currentPage > 1 && handleChangePage(currentPage);
           }}
           disabled={currentPage === 1}
           className={`${currentPage === 1 ? "text-base-label dark:text-gray-400" : "text-black dark:text-white"}`}
@@ -41,7 +41,7 @@ export default function Pagination({
         {Array.from({ length: totalPages }, (_, index) => (
           <button
             key={index + 1}
-            onClick={() => handleChangePage(index + 1)}
+            onClick={() => handleChangePage(index)}
             className={`${
               currentPage === index + 1
                 ? "bg-black px-2 rounded-lg text-white dark:bg-white dark:text-black"
@@ -52,7 +52,7 @@ export default function Pagination({
           </button>
         ))}
         <button
-          onClick={() => handleChangePage(currentPage + 1)}
+          onClick={() => handleChangePage(currentPage)}
           disabled={currentPage === totalPages}
           className={`${
             currentPage === totalPages ? "text-base-label dark:text-gray-400" : "text-black dark:text-white"
