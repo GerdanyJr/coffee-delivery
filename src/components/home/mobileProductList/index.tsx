@@ -28,10 +28,6 @@ export function MobileProductList({
   onFilterPress,
 }: MobileProductListprops) {
   const { ref } = useInfiniteScroll<Coffee>(setData, filter, getCoffees);
-
-  function onFilterPress(filter: FilterType) {
-    setOpenedFilter((prev) => (prev === filter ? undefined : filter));
-  }
   return (
     <>
       <div className="flex justify-end gap-4 mx-8 my-4">
