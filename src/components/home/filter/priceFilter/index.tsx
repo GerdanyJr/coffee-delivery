@@ -26,7 +26,12 @@ export function PriceFilter({
     <div className={`relative font-roboto ${className}`}>
       <button className="flex items-center gap-1 text-lg" onClick={onPress}>
         Preço
-        <CaretDown size={24} className={open ? "rotate-180" : ""} />
+        <CaretDown
+          size={24}
+          className={`${
+            open ? "rotate-180" : "rotate-0"
+          } transition-[250ms] ease-in-out`}
+        />
       </button>
       {open && (
         <div className="absolute flex flex-col items-start gap-3 p-4 mt-1 bg-white rounded-lg shadow-2xl w-max -left-36">
