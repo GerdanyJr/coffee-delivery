@@ -37,7 +37,7 @@ export default function Pagination({
             </button>
             <button
               onClick={() => {
-                return currentPage > 1 && handleChangePage(currentPage);
+                return currentPage > 1 && handleChangePage(currentPage - 2);
               }}
               disabled={currentPage === 1}
               className={`${
@@ -73,7 +73,7 @@ export default function Pagination({
               <CaretRight size={20} />
             </button>
             <button
-              onClick={() => handleChangePage(totalPages)}
+              onClick={() => handleChangePage(totalPages - 1)}
               disabled={currentPage === totalPages}
               className={`${
                 currentPage === totalPages
