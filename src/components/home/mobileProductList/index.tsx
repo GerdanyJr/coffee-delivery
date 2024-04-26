@@ -1,23 +1,34 @@
 "use client";
 
-import { Coffee } from "@/@types/interface/coffee";
+import { Category, Coffee } from "@/@types/interface/coffee";
 import { ProductCard } from "@/components/UI/productCard";
 import { useInfiniteScroll } from "@/hooks/useInfiniteScroll";
 import { getCoffees } from "@/services/coffeeService";
 import { PriceFilter } from "../filter/priceFilter";
-import { FilterType, useFilter } from "@/hooks/useFilter";
-import { useState } from "react";
+import { Filter, FilterType } from "@/hooks/useFilter";
+import { Dispatch, SetStateAction } from "react";
 import { TagFilter } from "../filter/tagFilter";
 
-export function MobileProductList() {
-  const [openedFilter, setOpenedFilter] = useState<FilterType>();
-  const [data, setData] = useState<Coffee[]>([]);
-  const { filter, tags, setFilter } = useFilter(setData);
+interface MobileProductListprops {
+  openedFilter: FilterType;
+  data: Coffee[];
+  filter: Filter;
+  tags: Category[];
+  setData: Dispatch<SetStateAction<Coffee[]>>;
+  setFilter: Dispatch<SetStateAction<Filter>>;
+  onFilterPress: (filter: FilterType) => void;
+}
+export function MobileProductList({
+  openedFilter,
+  data,
+  filter,
+  tags,
+  setData,
+  setFilter,
+  onFilterPress,
+}: MobileProductListprops) {
   const { ref } = useInfiniteScroll<Coffee>(setData, filter, getCoffees);
 
-  function onFilterPress(filter: FilterType) {
-    setOpenedFilter((prev) => (prev === filter ? undefined : filter));
-  }
   return (
     <>
       <div className="flex justify-end gap-4 mx-8 my-4">

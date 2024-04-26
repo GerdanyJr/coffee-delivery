@@ -1,4 +1,3 @@
-"use client";
 import { CaretDown } from "@phosphor-icons/react/dist/ssr";
 import { Dispatch, SetStateAction } from "react";
 import { FilterOption } from "../filterOption";
