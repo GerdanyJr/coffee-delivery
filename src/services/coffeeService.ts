@@ -17,13 +17,11 @@ export async function getCoffees(page: number, filter: Filter) {
     url = url.replace("/coffee", url.split("?")[0] + "/category");
     url += `&tags=${tagIds.join(",")}`;
   }
+  if (filter.search.length > 0) {
+    url += `&search=${filter.search}`;
+  }
 
   const response = await api.get(url);
   const data = (await response.data) as Pages<Coffee>;
-  return data;
-}
-export async function getFilteredCoffes(page:number,name:string) {
-  const response = await api.get(`/coffee/name?name=${name}&page=${page}`);
-  const data = await response.data;
   return data;
 }

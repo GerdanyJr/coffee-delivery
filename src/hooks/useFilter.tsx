@@ -9,6 +9,7 @@ import { Category, Coffee } from "@/@types/interface/coffee";
 import { getCoffees } from "@/services/coffeeService";
 
 export interface Filter {
+  search: string;
   priceFilter: {
     sort: string | undefined;
     direction: "asc" | "desc" | undefined;
@@ -19,6 +20,7 @@ export interface Filter {
 }
 
 export const defaultFilter = {
+  search: "",
   priceFilter: {
     sort: undefined,
     direction: undefined,
@@ -56,7 +58,7 @@ export function useFilter(setProducts: Dispatch<SetStateAction<Coffee[]>>) {
       setTotalPages(data.totalPages);
       setPage(data.pageNumber > data.totalPages ? 0 : data.pageNumber);
     },
-    [filter.priceFilter, filter.tags]
+    [filter.priceFilter, filter.tags, filter.search]
   );
 
   return {
