@@ -2,10 +2,7 @@
 import { Payment } from "@/components/checkout/payment";
 import { CheckoutAddress } from "../../../components/checkout/checkoutAddress";
 import { OrderSummary } from "@/components/checkout/orderSummary";
-import { Metadata } from "next";
-export const metadata: Metadata = {
-  title: "Checkout",
-};
+
 export default function Checkout() {
   return (
     <div className="flex flex-col justify-between gap-8 mx-4 mt-20 lg:flex-row lg:gap-4">
