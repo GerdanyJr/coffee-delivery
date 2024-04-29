@@ -1,27 +1,25 @@
+"use client";
 import { CaretDown } from "@phosphor-icons/react/dist/ssr";
-import { Dispatch, SetStateAction } from "react";
+import { useContext } from "react";
 import { FilterOption } from "../filterOption";
 import { Filter, defaultFilter } from "@/hooks/useFilter";
+import { FilterContext } from "@/store/FilterContext";
 
 export function PriceFilter({
-  open,
   onPress,
-  filter,
-  setFilter,
   className,
 }: {
-  open: boolean;
   onPress: () => void;
-  filter: Filter;
-  setFilter: Dispatch<SetStateAction<Filter>>;
   className?: string;
 }) {
+  const { openedFilter, filter, setFilter } = useContext(FilterContext);
   function updateFilter(priceFilter: any) {
-    setFilter((prev) => ({
+    setFilter((prev: Filter) => ({
       ...prev,
       priceFilter: { ...defaultFilter.priceFilter, ...priceFilter },
     }));
   }
+
   return (
     <div className={`relative font-roboto ${className}`}>
       <button className="flex items-center gap-1 text-lg" onClick={onPress}>
@@ -29,11 +27,11 @@ export function PriceFilter({
         <CaretDown
           size={24}
           className={`${
-            open ? "rotate-180" : "rotate-0"
+            openedFilter === "priceFilter" ? "rotate-180" : "rotate-0"
           } transition-[250ms] ease-in-out`}
         />
       </button>
-      {open && (
+      {openedFilter === "priceFilter" && (
         <div className="absolute flex flex-col items-start gap-3 p-4 mt-1 bg-white rounded-lg shadow-2xl w-max -left-36">
           <button
             onClick={() =>

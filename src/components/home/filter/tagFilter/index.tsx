@@ -1,27 +1,23 @@
 import { CaretDown } from "@phosphor-icons/react/dist/ssr";
-import { Dispatch, SetStateAction } from "react";
+import { useContext } from "react";
 import { FilterOption } from "../filterOption";
 import { Category } from "@/@types/interface/coffee";
-import { Filter } from "@/hooks/useFilter";
+import { FilterContext } from "@/store/FilterContext";
 
 export function TagFilter({
-  tags,
-  filter,
-  setFilter,
-  open,
   onPress,
   className,
 }: {
-  tags: Category[];
-  filter: Category[];
-  setFilter: Dispatch<SetStateAction<Filter>>;
-  open: boolean;
   onPress: () => void;
   className?: string;
 }) {
+  const { tags, openedFilter, filter, setFilter } = useContext(FilterContext);
+
   function updateFilter(tag: Category) {
     setFilter((prev) => {
-      const existingItemIndex = filter.findIndex((item) => item.id === tag.id);
+      const existingItemIndex = filter.tags.findIndex(
+        (item) => item.id === tag.id
+      );
       let updatedTags: Category[];
       if (existingItemIndex < 0) {
         updatedTags = [...prev.tags, tag];
@@ -34,6 +30,7 @@ export function TagFilter({
       };
     });
   }
+
   return (
     <div className={`relative font-roboto ${className}`}>
       <button className="flex items-center gap-1 text-lg" onClick={onPress}>
@@ -41,13 +38,13 @@ export function TagFilter({
         <CaretDown
           size={24}
           className={`${
-            open ? "rotate-180" : "rotate-0"
+            openedFilter === "tagFilter" ? "rotate-180" : "rotate-0"
           } transition-[250ms] ease-in-out`}
         />
       </button>
-      {open && (
+      {openedFilter === "tagFilter" && (
         <div className="absolute flex flex-col items-start gap-3 p-4 mt-1 bg-white rounded-lg shadow-2xl w-max min-w-[12rem] max-h-52 overflow-scroll -left-32">
-          {filter.length > 0 && (
+          {filter.tags.length > 0 && (
             <button
               onClick={() => setFilter((prev) => ({ ...prev, tags: [] }))}
               className="underline"
@@ -60,7 +57,7 @@ export function TagFilter({
               key={tag.id}
               label={tag.name}
               value={tag.id}
-              checked={filter?.includes(tag)}
+              checked={filter.tags.includes(tag)}
               onClick={() => updateFilter(tag)}
             />
           ))}

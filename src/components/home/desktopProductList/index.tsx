@@ -2,49 +2,40 @@
 import { ProductList } from "../productList";
 import Pagination from "../pagination";
 import { PriceFilter } from "../filter/priceFilter";
-import { Filter, FilterType } from "@/hooks/useFilter";
-import { Dispatch, SetStateAction } from "react";
-import { Category, Coffee } from "@/@types/interface/coffee";
+import { KeyboardEvent, MouseEvent, useContext, useState } from "react";
 import { TagFilter } from "../filter/tagFilter";
+import { SearchBar } from "../searchBar";
+import { FilterContext } from "@/store/FilterContext";
 
-interface DestopProductListProps {
-  openedFilter: FilterType;
-  data: Coffee[];
-  filter: Filter;
-  tags: Category[];
-  page: number;
-  totalPages: number;
-  handleChangePage: (page: number) => void;
-  setFilter: Dispatch<SetStateAction<Filter>>;
-  onFilterPress: (filter: FilterType) => void;
-}
-export function DesktopProductList({
-  tags,
-  data,
-  page,
-  totalPages,
-  filter,
-  openedFilter,
-  setFilter,
-  handleChangePage,
-  onFilterPress,
-}: DestopProductListProps) {
+export function DesktopProductList() {
+  const [search, setSearch] = useState("");
+  const { data, page, totalPages, setFilter, handleChangePage, onFilterPress } =
+    useContext(FilterContext);
+
+  function handleReset(event: MouseEvent<HTMLButtonElement>) {
+    setSearch("");
+    setFilter((prev) => ({ ...prev, search: "" }));
+  }
+
+  function handleKeyDown(event: KeyboardEvent<HTMLInputElement>) {
+    if (event.key === "Enter") {
+      setFilter((prev) => ({ ...prev, search: search }));
+    }
+  }
+
   return (
     <>
-      <div className="flex justify-end gap-2">
-        <PriceFilter
-          filter={filter}
-          setFilter={setFilter}
-          open={openedFilter === "priceFilter"}
-          onPress={() => onFilterPress("priceFilter")}
+      <div className="flex items-center justify-between m-2">
+        <SearchBar
+          value={search}
+          onChange={(e) => setSearch(e.currentTarget.value)}
+          onKeyDown={handleKeyDown}
+          onReset={handleReset}
         />
-        <TagFilter
-          filter={filter.tags}
-          tags={tags}
-          open={openedFilter === "tagFilter"}
-          setFilter={setFilter}
-          onPress={() => onFilterPress("tagFilter")}
-        />
+        <div className="flex gap-4">
+          <PriceFilter onPress={() => onFilterPress("priceFilter")} />
+          <TagFilter onPress={() => onFilterPress("tagFilter")} />
+        </div>
       </div>
       <h2 className="mx-2 mb-16 text-3xl font-bold text-start font-baloo text-base-subtitle">
         Nossos cafés
