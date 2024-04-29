@@ -1,4 +1,4 @@
-import { CheckoutAddress } from "@/components/checkoutAddress";
+import { CheckoutAddress } from "@/components/checkout/checkoutAddress";
 import { render } from "@testing-library/react";
 
 describe("checkoutAddress", () => {
@@ -17,4 +17,3 @@ describe("checkoutAddress", () => {
     expect(inputElement).toBeInTheDocument();
   });
 });
-
