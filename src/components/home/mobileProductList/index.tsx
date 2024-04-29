@@ -5,45 +5,24 @@ import { ProductCard } from "@/components/UI/productCard";
 import { useInfiniteScroll } from "@/hooks/useInfiniteScroll";
 import { getCoffees } from "@/services/coffeeService";
 import { PriceFilter } from "../filter/priceFilter";
-import { Filter, FilterType } from "@/hooks/useFilter";
-import { Dispatch, SetStateAction } from "react";
+import { FilterType } from "@/hooks/useFilter";
+import { useContext } from "react";
 import { TagFilter } from "../filter/tagFilter";
+import { FilterContext } from "@/store/FilterContext";
 
 interface MobileProductListprops {
-  openedFilter: FilterType;
-  data: Coffee[];
-  filter: Filter;
-  tags: Category[];
-  setData: Dispatch<SetStateAction<Coffee[]>>;
-  setFilter: Dispatch<SetStateAction<Filter>>;
   onFilterPress: (filter: FilterType) => void;
 }
-export function MobileProductList({
-  openedFilter,
-  data,
-  filter,
-  tags,
-  setData,
-  setFilter,
-  onFilterPress,
-}: MobileProductListprops) {
+export function MobileProductList({ onFilterPress }: MobileProductListprops) {
+  const { data, tags, openedFilter, filter, setFilter, setData } =
+    useContext(FilterContext);
   const { ref } = useInfiniteScroll<Coffee>(setData, filter, getCoffees);
+
   return (
     <>
       <div className="flex justify-end gap-4 mx-8 my-4">
-        <PriceFilter
-          filter={filter}
-          setFilter={setFilter}
-          open={openedFilter === "priceFilter"}
-          onPress={() => onFilterPress("priceFilter")}
-        />
-        <TagFilter
-          filter={filter.tags}
-          tags={tags}
-          open={openedFilter === "tagFilter"}
-          setFilter={setFilter}
-          onPress={() => onFilterPress("tagFilter")}
-        />
+        <PriceFilter onPress={() => onFilterPress("priceFilter")} />
+        <TagFilter onPress={() => onFilterPress("tagFilter")} />
       </div>
       <h2 className="mx-2 mb-16 text-3xl font-bold text-center font-baloo text-base-subtitle">
         Nossos cafés
